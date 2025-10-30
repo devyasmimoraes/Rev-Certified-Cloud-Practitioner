@@ -39,8 +39,4 @@ Como este é um projeto front-end estático, você não precisa de um servidor.
 
 E pronto! O jogo estará funcionando.
 
-## 📸 Visualização
 
-*(Recomendo que você tire um print screen do seu jogo funcionando e coloque aqui!)*
-
-![Prévia do Jogo](caminho/para/sua/imagem.png)
