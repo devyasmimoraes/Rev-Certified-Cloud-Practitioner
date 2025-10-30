@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Quest - O Jogo Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="score-container">
+            Pontuação: <span id="score">0</span>
+        </div>
+
+        <h1>⚔️ AWS Quest ⚔️</h1>
+        <h2 id="quest-title">Baseado no seu Estudo Turbo</h2>
+
+        <div id="level-select" class="level-grid">
+            <button class="btn level-btn" data-level="1">Nível 1: Conceitos</button>
+            <button class="btn level-btn" data-level="2">Nível 2: Segurança</button>
+            <button class="btn level-btn" data-level="3">Nível 3: Tecnologia</button>
+            <button class="btn level-btn" data-level="4">Nível 4: Faturamento</button>
+            <button class="btn level-btn" data-level="5">Nível Bônus: IA/ML</button>
+        </div>
+        
+        <div id="question-container" class="hide">
+            <p id="question-text">Texto da Pergunta</p>
+            <div id="answer-buttons" class="btn-grid">
+                </div>
+        </div>
+
+        <div class="controls">
+            <button id="next-btn" class="next-btn btn hide">Próxima Pergunta</button>
+        </div>
+
+        <p id="feedback" class="feedback-text hide"></p>
+
+        <p id="explanation" class="explanation-text hide"></p>
+
+        <button id="back-btn" class="back-btn btn hide">Voltar ao Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,146 @@
+/* Define a aparência geral do "jogo" */
+body {
+    background-color: #1a1a2e; /* Fundo escuro "game" */
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* O container principal do jogo */
+.game-container {
+    background-color: #2a2a4e;
+    border: 3px solid #ff9900; /* Laranja AWS */
+    border-radius: 10px;
+    padding: 25px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    /* NOVO: Necessário para o HUD de pontuação */
+    position: relative; 
+}
+
+/* NOVO: Estilo do HUD de Pontuação */
+#score-container {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff9900;
+}
+
+h1, h2 {
+    color: #ff9900; /* Laranja AWS */
+}
+
+/* --- Estilos do Menu --- */
+.level-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn.level-btn {
+    background-color: #3a3a6f;
+    font-size: 1.1em;
+    padding: 15px;
+}
+.btn.level-btn:hover {
+    background-color: #4a4a7f;
+}
+/* Cor do Nível Bônus */
+.btn.level-btn[data-level="5"] {
+    border-color: #17a2b8;
+    color: #17a2b8;
+}
+.btn.level-btn[data-level="5"]:hover {
+    background-color: #1f5f6b;
+    color: white;
+}
+
+
+/* --- Estilos do Quiz --- */
+/* Grade para os botões de resposta */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Estilo geral dos botões */
+.btn {
+    background-color: #4a4a7f;
+    border: 2px solid #6a6a9f;
+    border-radius: 5px;
+    padding: 12px;
+    color: #e0e0e0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+    background-color: #6a6a9f;
+    transform: translateY(-2px);
+}
+
+/* Estilo para botões de resposta corretos e incorretos */
+.btn.correct {
+    background-color: #28a745; /* Verde */
+    border-color: #218838;
+}
+
+.btn.wrong {
+    background-color: #dc3545; /* Vermelho */
+    border-color: #c82333;
+}
+
+/* Esconde elementos que não devem aparecer sempre */
+.hide {
+    display: none;
+}
+
+/* Estilo do texto de feedback (Certo/Errado) */
+.feedback-text {
+    margin-top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.feedback-text.correct {
+    color: #28a745;
+}
+
+.feedback-text.wrong {
+    color: #dc3545;
+}
+
+/* NOVO: Estilo do texto de Explicação */
+.explanation-text {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #1a1a2e; /* Um pouco mais escuro */
+    border-radius: 5px;
+    border-left: 4px solid #17a2b8; /* Azul 'info' */
+    text-align: left;
+    font-size: 0.95em;
+}
+
+
+/* Botão de Voltar */
+.back-btn {
+    margin-top: 20px;
+    background-color: #6c757d;
+    border-color: #5a6268;
+}
+.back-btn:hover {
+    background-color: #5a6268;
+}
