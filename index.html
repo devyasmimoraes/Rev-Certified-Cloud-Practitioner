@@ -23,6 +23,7 @@
         <div id="game-container" class="hidden">
             <div id="status-bar">
                 <span id="contador-questoes"></span>
+                <span id="modo-teste-titulo"></span>
                 <span id="placar-atual">Pontos: 0</span>
             </div>
             
@@ -35,14 +36,19 @@
             <div id="feedback-container">
                 </div>
 
-            <button id="voltar-inicio-btn">Voltar ao Início</button>
+            <button id="voltar-inicio-btn">Sair e Voltar ao Início</button>
         </div>
 
         <div id="resultado-container" class="hidden">
             <h2>Simulado Concluído!</h2>
             <p id="resultado-final-texto"></p>
             <p id="resultado-feedback"></p>
-            <button id="recomecar-btn">Tentar Novamente</button>
+
+            <div id="resultado-botoes">
+                <button id="recomecar-teste-btn">Tentar Novamente (Mesmo Teste)</button>
+                <button id="revisar-erradas-btn" class="hidden">Revisar Perguntas Erradas</button>
+                <button id="voltar-inicio-resultado-btn">Voltar ao Início</button>
+            </div>
         </div>
 
     </div>

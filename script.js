@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elementos do Jogo
     const contadorQuestoesEl = document.getElementById("contador-questoes");
     const placarAtualEl = document.getElementById("placar-atual");
+    const modoTesteTituloEl = document.getElementById("modo-teste-titulo");
     const perguntaTextoEl = document.getElementById("pergunta-texto");
     const opcoesContainerEl = document.getElementById("opcoes-container");
     const feedbackContainerEl = document.getElementById("feedback-container");
@@ -16,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Elementos do Resultado
     const resultadoFinalTextoEl = document.getElementById("resultado-final-texto");
     const resultadoFeedbackEl = document.getElementById("resultado-feedback");
-    const recomecarBtn = document.getElementById("recomecar-btn");
+    const recomecarTesteBtn = document.getElementById("recomecar-teste-btn");
+    const revisarErradasBtn = document.getElementById("revisar-erradas-btn");
+    const voltarInicioResultadoBtn = document.getElementById("voltar-inicio-resultado-btn");
 
     // Variáveis de Estado
     let allQuestions = {};
@@ -24,36 +27,36 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let score = 0;
     let currentLevel = '';
+    let nomeNivelAtual = ''; // Armazena o título do nível (ex: "Conceitos de Nuvem")
+
+    // Novas variáveis para o relatório de erros
+    let questoesErradas = []; // Rastreia erros da rodada ATUAL
+    let questoesParaRevisar = []; // Armazena erros da rodada ANTERIOR para o modo de revisão
 
     // Função principal: Carrega as questões do JSON
     async function init() {
         try {
-            // Usa o novo arquivo 'questoes.json'
             const response = await fetch('questoes.json');
             if (!response.ok) {
                 throw new Error('Falha ao carregar o arquivo de questões.');
             }
             allQuestions = await response.json();
             
-            // Adiciona listeners aos botões de nível
             botoesNivel.forEach(button => {
                 button.addEventListener('click', () => {
                     currentLevel = button.getAttribute('data-level');
-                    startGame(currentLevel);
+                    nomeNivelAtual = button.innerText; // Salva o nome do botão
+                    startGame(currentLevel, nomeNivelAtual);
                 });
             });
 
-            // Listener para o botão de recomeçar
-            recomecarBtn.addEventListener('click', () => {
-                resultadoContainerEl.classList.add('hidden');
-                // Se o último jogo foi 'completo', recomeça ele, senão, volta ao início
-                if (currentLevel) {
-                    startGame(currentLevel);
-                } else {
-                    goHome();
-                }
+            // Listeners dos botões de resultado
+            recomecarTesteBtn.addEventListener('click', () => {
+                startGame(currentLevel, nomeNivelAtual); // Reinicia o mesmo teste
             });
-
+            
+            revisarErradasBtn.addEventListener('click', startReviewMode);
+            voltarInicioResultadoBtn.addEventListener('click', goHome);
             voltarInicioBtn.addEventListener('click', goHome);
 
         } catch (error) {
@@ -63,33 +66,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Prepara e inicia o jogo
-    function startGame(level) {
-        // Reseta o estado
+    function startGame(level, levelTitle) {
+        // Reseta o estado para a rodada atual
         currentIndex = 0;
         score = 0;
-        currentQuestions = [];
-
-        // Prepara as questões
-        if (level === 'completo') {
-            // Junta todas as questões de todos os níveis
+        questoesErradas = []; // Limpa os erros da rodada atual
+        
+        // Define as questões
+        if (level === 'revisao') {
+            // Se for modo revisão, usa a lista de questões salvas
+            currentQuestions = [...questoesParaRevisar];
+        } else if (level === 'completo') {
             currentQuestions = Object.values(allQuestions).flat();
         } else {
-            // Pega apenas as questões do nível selecionado
             currentQuestions = allQuestions[level] ? [...allQuestions[level]] : [];
         }
 
-        // Embaralha as questões
-        currentQuestions = currentQuestions
-            .map(value => ({ value, sort: Math.random() }))
-            .sort((a, b) => a.sort - b.sort)
-            .map(({ value }) => value);
+        // Embaralha as questões (exceto se for revisão, para manter a ordem dos erros)
+        if (level !== 'revisao') {
+             currentQuestions = currentQuestions
+                .map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+        }
 
         // Atualiza a UI
         selecaoNivelEl.classList.add("hidden");
         resultadoContainerEl.classList.add("hidden");
         gameContainerEl.classList.remove("hidden");
+        
         feedbackContainerEl.innerText = "";
         placarAtualEl.innerText = "Pontos: 0";
+        modoTesteTituloEl.innerText = levelTitle; // Define o título do modo
 
         // Mostra a primeira questão
         showQuestion();
@@ -97,27 +105,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mostra a questão atual
     function showQuestion() {
-        // Limpa o feedback anterior
         feedbackContainerEl.innerText = "";
         feedbackContainerEl.className = "";
         
         if (currentIndex < currentQuestions.length) {
             const q = currentQuestions[currentIndex];
 
-            // Atualiza textos
             perguntaTextoEl.innerText = q.pergunta;
             contadorQuestoesEl.innerText = `Questão ${currentIndex + 1} de ${currentQuestions.length}`;
-            
-            // Limpa opções anteriores
             opcoesContainerEl.innerHTML = "";
 
-            // Embaralha as opções da pergunta atual
             const opcoesEmbaralhadas = [...q.opcoes]
                 .map(value => ({ value, sort: Math.random() }))
                 .sort((a, b) => a.sort - b.sort)
                 .map(({ value }) => value);
 
-            // Cria os botões de opção
             opcoesEmbaralhadas.forEach(opcao => {
                 const button = document.createElement("button");
                 button.innerText = opcao;
@@ -127,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             
         } else {
-            // Fim do Quiz
             showResult();
         }
     }
@@ -136,23 +137,22 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleAnswerClick(buttonClicked, respostaCorreta) {
         const respostaUsuario = buttonClicked.innerText;
         
-        // Desabilita todos os botões após o clique
         const botoesOpcao = document.querySelectorAll(".btn-opcao");
         botoesOpcao.forEach(btn => btn.disabled = true);
 
         if (respostaUsuario === respostaCorreta) {
-            // Resposta Correta
             score++;
             buttonClicked.classList.add("correta");
             feedbackContainerEl.innerText = "Correto! ✔️";
             feedbackContainerEl.classList.add("correto");
         } else {
-            // Resposta Incorreta
             buttonClicked.classList.add("incorreta");
             feedbackContainerEl.innerText = "Incorreto! ❌";
             feedbackContainerEl.classList.add("incorreto");
             
-            // Mostra qual era a correta
+            // Adiciona a questão errada ao relatório
+            questoesErradas.push(currentQuestions[currentIndex]);
+
             botoesOpcao.forEach(btn => {
                 if (btn.innerText === respostaCorreta) {
                     btn.classList.add("correta");
@@ -160,10 +160,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
         
-        // Atualiza o placar
         placarAtualEl.innerText = `Pontos: ${score}`;
 
-        // Vai para a próxima pergunta após 2 segundos
         setTimeout(() => {
             currentIndex++;
             showQuestion();
@@ -175,12 +173,22 @@ document.addEventListener("DOMContentLoaded", () => {
         gameContainerEl.classList.add("hidden");
         resultadoContainerEl.classList.remove("hidden");
 
+        // Salva as questões erradas desta rodada para o "Modo Revisão"
+        questoesParaRevisar = [...questoesErradas];
+
+        // Mostra ou esconde o botão de revisar
+        if (questoesParaRevisar.length > 0) {
+            revisarErradasBtn.classList.remove("hidden");
+            revisarErradasBtn.innerText = `Revisar ${questoesParaRevisar.length} Questões Erradas`;
+        } else {
+            revisarErradasBtn.classList.add("hidden");
+        }
+
         const total = currentQuestions.length;
         const percentual = total > 0 ? Math.round((score / total) * 100) : 0;
         
         resultadoFinalTextoEl.innerText = `Você acertou ${score} de ${total} questões (${percentual}%)`;
 
-        // Feedback com base na pontuação
         if (percentual === 100) {
             resultadoFeedbackEl.innerText = "Excelente! Você gabaritou! 🚀";
         } else if (percentual >= 70) {
@@ -192,12 +200,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Nova função para iniciar o modo de revisão
+    function startReviewMode() {
+        const reviewTitle = `Modo de Revisão (${questoesParaRevisar.length} Questões)`;
+        currentLevel = 'revisao'; // Define um 'level' especial
+        nomeNivelAtual = reviewTitle;
+        startGame(currentLevel, nomeNivelAtual);
+    }
+
     // Volta para a tela inicial
     function goHome() {
         resultadoContainerEl.classList.add("hidden");
         gameContainerEl.classList.add("hidden");
         selecaoNivelEl.classList.remove("hidden");
-        currentLevel = ''; // Reseta o nível atual
+        
+        // Reseta estados globais
+        currentLevel = '';
+        nomeNivelAtual = '';
+        questoesErradas = [];
+        questoesParaRevisar = [];
     }
 
     // Inicia o script
