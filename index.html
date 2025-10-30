@@ -3,44 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Quest - O Jogo Completo</title>
+    <title>AWS Quest - Simulado Cloud Practitioner</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <div id="score-container">
-            Pontuação: <span id="score">0</span>
+    <div class="container">
+        <h1>AWS Quest - Simulado ☁️</h1>
+
+        <div id="selecao-nivel">
+            <h2>Escolha um tópico ou o simulado completo:</h2>
+            <button class="btn-nivel" data-level="conceitos">1. Conceitos de Nuvem</button>
+            <button class="btn-nivel" data-level="seguranca">2. Segurança e Conformidade</button>
+            <button class="btn-nivel" data-level="tecnologia">3. Tecnologia e Serviços</button>
+            <button class="btn-nivel" data-level="faturamento">4. Faturamento e Suporte</button>
+            <button class="btn-nivel" data-level="ia_ml">5. IA / Machine Learning</button>
+            <button class="btn-nivel" id="btn-simulado-completo" data-level="completo">🚀 Simulado Completo (Todos os Tópicos)</button>
         </div>
 
-        <h1>⚔️ AWS Quest ⚔️</h1>
-        <h2 id="quest-title">Baseado no seu Estudo Turbo</h2>
+        <div id="game-container" class="hidden">
+            <div id="status-bar">
+                <span id="contador-questoes"></span>
+                <span id="placar-atual">Pontos: 0</span>
+            </div>
+            
+            <div id="card">
+                <h3 id="pergunta-texto"></h3>
+                <div id="opcoes-container">
+                    </div>
+            </div>
 
-        <div id="level-select" class="level-grid">
-            <button class="btn level-btn" data-level="1">Nível 1: Conceitos</button>
-            <button class="btn level-btn" data-level="2">Nível 2: Segurança</button>
-            <button class="btn level-btn" data-level="3">Nível 3: Tecnologia</button>
-            <button class="btn level-btn" data-level="4">Nível 4: Faturamento</button>
-            <button class="btn level-btn" data-level="5">Nível Bônus: IA/ML</button>
-        </div>
-        
-        <div id="question-container" class="hide">
-            <p id="question-text">Texto da Pergunta</p>
-            <div id="answer-buttons" class="btn-grid">
+            <div id="feedback-container">
                 </div>
+
+            <button id="voltar-inicio-btn">Voltar ao Início</button>
         </div>
 
-        <div class="controls">
-            <button id="next-btn" class="next-btn btn hide">Próxima Pergunta</button>
+        <div id="resultado-container" class="hidden">
+            <h2>Simulado Concluído!</h2>
+            <p id="resultado-final-texto"></p>
+            <p id="resultado-feedback"></p>
+            <button id="recomecar-btn">Tentar Novamente</button>
         </div>
 
-        <p id="feedback" class="feedback-text hide"></p>
-
-        <p id="explanation" class="explanation-text hide"></p>
-
-        <button id="back-btn" class="back-btn btn hide">Voltar ao Menu</button>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-

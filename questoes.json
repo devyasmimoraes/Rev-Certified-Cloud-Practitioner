@@ -1,0 +1,142 @@
+{
+  "conceitos": [
+    {
+      "pergunta": "Qual modelo de implantação de nuvem combina infraestrutura local (on-premises) com serviços de nuvem pública?",
+      "opcoes": ["Nuvem Híbrida", "Nuvem Pública", "Nuvem Privada", "Nuvem Comunitária"],
+      "respostaCorreta": "Nuvem Híbrida"
+    },
+    {
+      "pergunta": "No modelo IaaS (Infrastructure as a Service), o que o cliente gerencia?",
+      "opcoes": [
+        "O sistema operacional, aplicações e dados",
+        "Apenas a aplicação",
+        "Apenas os dados e o acesso",
+        "O hardware físico do data center"
+      ],
+      "respostaCorreta": "O sistema operacional, aplicações e dados"
+    },
+    {
+      "pergunta": "Qual componente da infraestrutura global da AWS é um ou mais data centers independentes dentro de uma Região?",
+      "opcoes": ["Availability Zone (AZ)", "Edge Location", "Region", "VPC"],
+      "respostaCorreta": "Availability Zone (AZ)"
+    },
+    {
+      "pergunta": "Qual é um dos principais benefícios da computação em nuvem, permitindo que você pague apenas pelo que usa?",
+      "opcoes": ["Preço Pay-as-you-go", "Agilidade", "Elasticidade", "Alcance Global"],
+      "respostaCorreta": "Preço Pay-as-you-go"
+    }
+  ],
+  "seguranca": [
+    {
+      "pergunta": "No Modelo de Responsabilidade Compartilhada, pelo o que o CLIENTE é responsável?",
+      "opcoes": [
+        "Criptografar dados em repouso e em trânsito",
+        "Manter o hardware dos servidores",
+        "Segurança física dos data centers",
+        "Gerenciar a rede global da AWS"
+      ],
+      "respostaCorreta": "Criptografar dados em repouso e em trânsito"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é usado para gerenciar usuários, grupos, papéis (roles) e permissões de acesso?",
+      "opcoes": ["IAM (Identity and Access Management)", "AWS Shield", "Amazon GuardDuty", "AWS WAF"],
+      "respostaCorreta": "IAM (Identity and Access Management)"
+    },
+    {
+      "pergunta": "Qual serviço monitora métricas de desempenho dos recursos (como uso de CPU do EC2) e permite criar alarmes?",
+      "opcoes": ["Amazon CloudWatch", "AWS CloudTrail", "Trusted Advisor", "VPC Flow Logs"],
+      "respostaCorreta": "Amazon CloudWatch"
+    },
+    {
+      "pergunta": "Qual serviço registra todas as chamadas de API (quem fez o quê e quando) para fins de auditoria?",
+      "opcoes": ["AWS CloudTrail", "Amazon CloudWatch", "AWS Config", "Amazon Inspector"],
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "[Armadilha] Quem é responsável por aplicar patches e atualizações no sistema operacional de uma instância EC2?",
+      "opcoes": ["O Cliente", "A AWS", "O Gerente de Conta Técnico (TAM)", "O AWS Support (Plano Business)"],
+      "respostaCorreta": "O Cliente"
+    }
+  ],
+  "tecnologia": [
+    {
+      "pergunta": "Qual serviço da AWS fornece servidores virtuais (instâncias) na nuvem?",
+      "opcoes": ["Amazon EC2", "AWS Lambda", "Amazon S3", "Amazon RDS"],
+      "respostaCorreta": "Amazon EC2"
+    },
+    {
+      "pergunta": "Qual serviço permite executar código (funções) sem provisionar ou gerenciar servidores (serverless)?",
+      "opcoes": ["AWS Lambda", "Amazon EC2", "Elastic Beanstalk", "Amazon EKS"],
+      "respostaCorreta": "AWS Lambda"
+    },
+    {
+      "pergunta": "Qual serviço é usado para armazenamento de objetos durável e escalável, ideal para backups, data lakes e arquivos estáticos?",
+      "opcoes": ["Amazon S3", "Amazon EBS", "Amazon EFS", "Amazon RDS"],
+      "respostaCorreta": "Amazon S3"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é um banco de dados NoSQL (chave-valor) rápido e totalmente gerenciado?",
+      "opcoes": ["Amazon DynamoDB", "Amazon RDS", "Amazon Redshift", "Amazon Aurora"],
+      "respostaCorreta": "Amazon DynamoDB"
+    },
+    {
+      "pergunta": "Qual serviço é uma Rede de Distribuição de Conteúdo (CDN) que entrega dados e vídeos globalmente com baixa latência?",
+      "opcoes": ["Amazon CloudFront", "Amazon S3", "VPC", "Direct Connect"],
+      "respostaCorreta": "Amazon CloudFront"
+    },
+    {
+      "pergunta": "Qual serviço permite criar uma rede privada e isolada logicamente na nuvem da AWS?",
+      "opcoes": ["Amazon VPC", "AWS Shield", "Subnet", "Internet Gateway"],
+      "respostaCorreta": "Amazon VPC"
+    }
+  ],
+  "faturamento": [
+    {
+      "pergunta": "Qual tipo de instância EC2 oferece o maior desconto (até 90%), mas pode ser interrompida pela AWS a qualquer momento?",
+      "opcoes": ["Spot Instances", "Reserved Instances", "On-Demand Instances", "Savings Plans"],
+      "respostaCorreta": "Spot Instances"
+    },
+    {
+      "pergunta": "Qual ferramenta da AWS permite visualizar, analisar e gerenciar seus custos e uso da AWS ao longo do tempo?",
+      "opcoes": ["AWS Cost Explorer", "AWS Budgets", "Trusted Advisor", "AWS Organizations"],
+      "respostaCorreta": "AWS Cost Explorer"
+    },
+    {
+      "pergunta": "Qual serviço permite criar alertas que notificam você quando seus custos ou uso excedem um limite definido?",
+      "opcoes": ["AWS Budgets", "AWS Cost Explorer", "Amazon CloudWatch", "AWS Pricing Calculator"],
+      "respostaCorreta": "AWS Budgets"
+    },
+    {
+      "pergunta": "Qual plano de suporte da AWS oferece acesso a um Gerente Técnico de Conta (TAM) dedicado?",
+      "opcoes": ["Enterprise", "Business", "Developer", "Basic"],
+      "respostaCorreta": "Enterprise"
+    }
+  ],
+  "ia_ml": [
+    {
+      "pergunta": "Qual serviço é uma plataforma completa para construir, treinar e implantar modelos de machine learning (ML)?",
+      "opcoes": ["Amazon SageMaker", "Amazon Bedrock", "Amazon Comprehend", "Amazon EC2"],
+      "respostaCorreta": "Amazon SageMaker"
+    },
+    {
+      "pergunta": "Qual serviço é usado para reconhecimento facial e de objetos em imagens e vídeos?",
+      "opcoes": ["Amazon Rekognition", "Amazon Comprehend", "Amazon Transcribe", "Amazon Polly"],
+      "respostaCorreta": "Amazon Rekognition"
+    },
+    {
+      "pergunta": "Sua empresa precisa analisar o sentimento (positivo, negativo, neutro) em milhares de avaliações de clientes. Qual serviço usar?",
+      "opcoes": ["Amazon Comprehend", "Amazon Translate", "Amazon Lex", "Amazon Polly"],
+      "respostaCorreta": "Amazon Comprehend"
+    },
+    {
+      "pergunta": "Qual serviço da AWS permite acessar e usar modelos de IA generativa (como Claude, Llama 2) por meio de uma API?",
+      "opcoes": ["Amazon Bedrock", "Amazon SageMaker", "Amazon Lex", "AWS Lambda"],
+      "respostaCorreta": "Amazon Bedrock"
+    },
+    {
+      "pergunta": "Qual serviço converte texto em fala (Text-to-Speech) com som natural?",
+      "opcoes": ["Amazon Polly", "Amazon Transcribe", "Amazon Lex", "Amazon Translate"],
+      "respostaCorreta": "Amazon Polly"
+    }
+  ]
+}
