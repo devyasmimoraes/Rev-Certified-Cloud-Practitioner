@@ -24,6 +24,31 @@
       "pergunta": "Qual é um dos principais benefícios da computação em nuvem, permitindo que você pague apenas pelo que usa?",
       "opcoes": ["Preço Pay-as-you-go", "Agilidade", "Elasticidade", "Alcance Global"],
       "respostaCorreta": "Preço Pay-as-you-go"
+    },
+    {
+      "pergunta": "Qual princípio da arquitetura em nuvem permite aumentar ou diminuir recursos automaticamente com base na demanda?",
+      "opcoes": ["Elasticidade", "Resiliência", "Disponibilidade", "Agilidade"],
+      "respostaCorreta": "Elasticidade"
+    },
+    {
+      "pergunta": "Qual é o principal benefício de usar múltiplas Availability Zones em uma aplicação?",
+      "opcoes": [
+        "Alta disponibilidade e tolerância a falhas",
+        "Reduzir custos de armazenamento",
+        "Melhorar desempenho de rede",
+        "Aumentar a velocidade de deploy"
+      ],
+      "respostaCorreta": "Alta disponibilidade e tolerância a falhas"
+    },
+    {
+      "pergunta": "O que significa o conceito de 'Shared Responsibility Model' na AWS?",
+      "opcoes": [
+        "A AWS gerencia a segurança da nuvem, o cliente gerencia a segurança dentro da nuvem",
+        "O cliente é responsável por toda a segurança",
+        "A AWS é responsável por toda a segurança",
+        "A segurança é automática para todos os serviços"
+      ],
+      "respostaCorreta": "A AWS gerencia a segurança da nuvem, o cliente gerencia a segurança dentro da nuvem"
     }
   ],
   "seguranca": [
@@ -56,6 +81,21 @@
       "pergunta": "[Armadilha] Quem é responsável por aplicar patches e atualizações no sistema operacional de uma instância EC2?",
       "opcoes": ["O Cliente", "A AWS", "O Gerente de Conta Técnico (TAM)", "O AWS Support (Plano Business)"],
       "respostaCorreta": "O Cliente"
+    },
+    {
+      "pergunta": "Qual serviço ajuda a detectar ameaças de segurança continuamente em contas e workloads da AWS usando Machine Learning?",
+      "opcoes": ["Amazon GuardDuty", "AWS Config", "AWS Shield Advanced", "AWS Firewall Manager"],
+      "respostaCorreta": "Amazon GuardDuty"
+    },
+    {
+      "pergunta": "Qual serviço ajuda a proteger aplicações web contra ataques comuns como SQL Injection e Cross-Site Scripting?",
+      "opcoes": ["AWS WAF", "AWS Shield", "Amazon Inspector", "AWS Secrets Manager"],
+      "respostaCorreta": "AWS WAF"
+    },
+    {
+      "pergunta": "Qual serviço da AWS automatiza a verificação de conformidade e vulnerabilidades em instâncias EC2?",
+      "opcoes": ["Amazon Inspector", "AWS Config", "AWS Trusted Advisor", "AWS Shield"],
+      "respostaCorreta": "Amazon Inspector"
     }
   ],
   "tecnologia": [
@@ -88,6 +128,26 @@
       "pergunta": "Qual serviço permite criar uma rede privada e isolada logicamente na nuvem da AWS?",
       "opcoes": ["Amazon VPC", "AWS Shield", "Subnet", "Internet Gateway"],
       "respostaCorreta": "Amazon VPC"
+    },
+    {
+      "pergunta": "Qual serviço simplifica o deploy, escalonamento e gerenciamento de aplicações web sem precisar gerenciar servidores?",
+      "opcoes": ["AWS Elastic Beanstalk", "Amazon EC2", "Amazon ECS", "AWS Lambda"],
+      "respostaCorreta": "AWS Elastic Beanstalk"
+    },
+    {
+      "pergunta": "Qual serviço da AWS oferece containers gerenciados com suporte nativo a Docker?",
+      "opcoes": ["Amazon ECS", "Amazon EKS", "AWS Fargate", "Amazon Lightsail"],
+      "respostaCorreta": "Amazon ECS"
+    },
+    {
+      "pergunta": "Sua aplicação precisa processar grandes volumes de dados em tempo real. Qual serviço é mais indicado?",
+      "opcoes": ["Amazon Kinesis", "AWS Batch", "Amazon Athena", "AWS Glue"],
+      "respostaCorreta": "Amazon Kinesis"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é usado para executar consultas SQL diretamente sobre dados no S3, sem precisar de servidor?",
+      "opcoes": ["Amazon Athena", "Amazon Redshift", "AWS Glue", "Amazon EMR"],
+      "respostaCorreta": "Amazon Athena"
     }
   ],
   "faturamento": [
@@ -110,6 +170,21 @@
       "pergunta": "Qual plano de suporte da AWS oferece acesso a um Gerente Técnico de Conta (TAM) dedicado?",
       "opcoes": ["Enterprise", "Business", "Developer", "Basic"],
       "respostaCorreta": "Enterprise"
+    },
+    {
+      "pergunta": "Sua empresa quer consolidar o faturamento de múltiplas contas AWS sob uma única fatura. Qual serviço usar?",
+      "opcoes": ["AWS Organizations", "AWS Budgets", "Cost Explorer", "Savings Plans"],
+      "respostaCorreta": "AWS Organizations"
+    },
+    {
+      "pergunta": "Qual ferramenta permite estimar custos antes de implantar recursos na AWS?",
+      "opcoes": ["AWS Pricing Calculator", "AWS Budgets", "AWS Cost Explorer", "Trusted Advisor"],
+      "respostaCorreta": "AWS Pricing Calculator"
+    },
+    {
+      "pergunta": "Qual plano de suporte é gratuito e inclui apenas acesso à documentação e fóruns?",
+      "opcoes": ["Basic", "Developer", "Business", "Enterprise"],
+      "respostaCorreta": "Basic"
     }
   ],
   "ia_ml": [
@@ -137,6 +212,16 @@
       "pergunta": "Qual serviço converte texto em fala (Text-to-Speech) com som natural?",
       "opcoes": ["Amazon Polly", "Amazon Transcribe", "Amazon Lex", "Amazon Translate"],
       "respostaCorreta": "Amazon Polly"
+    },
+    {
+      "pergunta": "Qual serviço converte áudio em texto automaticamente (Speech-to-Text)?",
+      "opcoes": ["Amazon Transcribe", "Amazon Polly", "Amazon Translate", "Amazon Lex"],
+      "respostaCorreta": "Amazon Transcribe"
+    },
+    {
+      "pergunta": "Sua aplicação precisa traduzir texto em tempo real. Qual serviço utilizar?",
+      "opcoes": ["Amazon Translate", "Amazon Comprehend", "Amazon Polly", "Amazon Transcribe"],
+      "respostaCorreta": "Amazon Translate"
     }
   ]
 }

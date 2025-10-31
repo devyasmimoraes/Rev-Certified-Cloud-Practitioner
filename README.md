@@ -1,46 +1,108 @@
-# AWS Quest ☁️🎮
+AWS Quest - Simulado Cloud Practitioner ☁️
+Este é um projeto de simulado de ponta a ponta (full-stack) para estudos da certificação AWS Certified Cloud Practitioner (CLF-C02).
 
-Um simples jogo de Quiz (jogo de revisão) focado em conceitos da Amazon Web Services (AWS), criado para ajudar a testar e reforçar o conhecimento para estudos de certificação.
+Ele utiliza um front-end moderno com Vue.js + Vuetify e um back-end robusto com Python (Flask) e um banco de dados PostgreSQL para persistir o histórico de tentativas. Todo o ambiente é orquestrado com Docker.
 
-Este projeto é construído com HTML, CSS e JavaScript puros, focando na lógica de manipulação do DOM para criar uma experiência de quiz interativa.
+🛠️ Tecnologias Utilizadas
+Front-end:
 
-## 🚀 Funcionalidades
+Vue.js 3 (Composition API)
 
-* **Seleção de Nível:** O usuário pode escolher um tópico específico da AWS para revisar.
-* **Tópicos Atuais:**
-    * Nível 1: Conceitos
-    * Nível 2: Segurança
-    * Nível 3: Tecnologia
-    * Nível 4: Faturamento
-    * Nível Bônus: IA/ML
-* **Sistema de Pontuação:** O jogo acompanha a pontuação (`Pontuação`) do usuário à medida que ele responde às perguntas.
-* **Feedback Imediato:** (Suposição, mas é comum em quizzes) O usuário descobre se acertou ou errou a pergunta.
+Vuetify 3 (Framework de UI Material Design)
 
-## 🛠️ Tecnologias Utilizadas
+Vite (Build tool)
 
-* **HTML5:** Para a estrutura semântica do jogo (containeres, botões, texto).
-* **CSS3:** Para a estilização, layout (Grid/Flexbox) e para esconder/mostrar elementos (`style.css`).
-* **JavaScript (ES6+):** Para toda a lógica do jogo, incluindo:
-    * Carregar as perguntas.
-    * Validar as respostas.
-    * Atualizar a pontuação.
-    * Controlar a transição entre os níveis e as perguntas (`script.js`).
+Back-end:
 
-## 🏁 Como Executar o Projeto
+Python 3.9+
 
-Como este é um projeto front-end estático, você não precisa de um servidor.
+Flask (Para a API REST)
 
-1.  Clone este repositório:
-    ```bash
-    git clone [URL-DO-SEU-REPOSITÓRIO]
-    ```
-2.  Navegue até a pasta do projeto.
-3.  Abra o arquivo `index.html` diretamente no seu navegador de preferência (Google Chrome, Firefox, etc.).
+SQLAlchemy (ORM para o banco)
 
-E pronto! O jogo estará funcionando.
+Banco de Dados:
 
-## 📸 Visualização
+PostgreSQL (Para salvar o histórico de simulados)
 
-*(Recomendo que você tire um print screen do seu jogo funcionando e coloque aqui!)*
+Ambiente & Orquestração:
 
-![Prévia do Jogo](caminho/para/sua/imagem.png)
+Docker
+
+Docker Compose
+
+📁 Estrutura do Projeto
+/REV-CERTIFIED-CLOUD-PRACTITIONER
+├── backend/
+│   ├── app.py          # Servidor Flask (API)
+│   ├── models.py       # Modelo da tabela do banco
+│   ├── requirements.txt  # Dependências Python
+│   └── Dockerfile        # Receita do container do back-end
+│
+├── frontend/
+│   ├── public/
+│   │   └── questoes.json # O arquivo de questões do simulado
+│   ├── src/
+│   │   ├── plugins/
+│   │   │   └── vuetify.js  # Configuração do Vuetify
+│   │   ├── App.vue         # Componente principal do Vue
+│   │   └── main.js         # Ponto de entrada do Vue
+│   └── package.json      # Dependências do Front-end
+│
+└── docker-compose.yml    # Orquestrador (inicia o back-end e o db)
+🚀 Como Rodar o Projeto
+Para rodar este projeto, você precisará de dois terminais abertos: um para o back-end (Docker) e outro para o front-end (Vite/Vue).
+
+Pré-requisitos
+Docker & Docker Compose (O docker compose com espaço)
+
+Node.js (LTS) (que inclui o npm)
+
+Terminal 1: Iniciando o Back-end (API + Banco de Dados)
+Abra seu primeiro terminal na pasta raiz do projeto (~/Rev-Certified-Cloud-Practitioner).
+
+Inicie os containers do back-end e do banco de dados em modo "detached" (segundo plano):
+
+Bash
+
+docker compose up --build -d
+O comando --build só é necessário na primeira vez ou se você fizer alterações no back-end (ex: app.py, requirements.txt).
+
+O -d (detached) roda os containers em segundo plano e libera seu terminal.
+
+Seu back-end agora está rodando em http://127.0.0.1:5000.
+
+Terminal 2: Iniciando o Front-end (Interface do Usuário)
+Abra um segundo terminal (no VS Code, clique no + no painel do terminal).
+
+Navegue até a pasta frontend:
+
+Bash
+
+cd frontend
+(Se for a primeira vez) Instale as dependências do Node.js (Vue, Vuetify, etc.):
+
+Bash
+
+npm install
+Inicie o servidor de desenvolvimento do Vue (Vite):
+
+Bash
+
+npm run dev
+3. Acesse o Aplicativo
+O Terminal 2 (do front-end) mostrará uma mensagem similar a:
+
+  ➜  Local:   http://localhost:5173/
+Abra o link http://localhost:5173/ no seu navegador.
+
+Pronto! Seu simulado está no ar, com o front-end bonito do Vuetify se comunicando com seu back-end Python/Postgres.
+
+🛑 Como Parar o Projeto
+Parar o Front-end: Pressione Ctrl+C no Terminal 2.
+
+Parar o Back-end (API e DB): No Terminal 1 (na pasta raiz), rode:
+
+Bash
+
+docker compose down
+(Seus dados do Postgres serão preservados no volume do Docker, prontos para a próxima vez que você usar docker compose up).

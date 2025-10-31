@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+pip-freeze.txt
+
+# VS Code
+.vscode/
+
+# Logs
+*.log

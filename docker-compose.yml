@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # 1. O serviço do Back-end (Flask App)
+  app:
+    build: ./backend  # Onde encontrar o Dockerfile para construir
+    ports:
+      - "5000:5000"  # Mapeia a porta 5000 do seu PC para a 5000 do container
+    volumes:
+      - ./backend:/app # Monta o diretório local no container (para live-reload)
+    environment:
+      # Passa as variáveis de ambiente para o app.py
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=aws_quest_db
+    depends_on:
+      - db  # Diz ao Docker para iniciar o 'db' antes do 'app'
+    restart: always
+
+  # 2. O serviço do Banco de Dados (Postgres)
+  db:
+    image: postgres:14-alpine # Imagem oficial do Postgres
+    environment:
+      # Cria o banco e o usuário
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=aws_quest_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persiste os dados do banco
+    ports:
+      - "5435:5432" # Mapeia a porta do Postgres (opcional, bom para debugar)
+    restart: always
+
+volumes:
+  postgres_data: # Define o volume para persistir os dados do DB
