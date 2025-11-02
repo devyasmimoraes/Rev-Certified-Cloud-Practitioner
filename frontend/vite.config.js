@@ -13,6 +13,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
-    },
+    }
   },
+  
+  // ADICIONE ESTA SEÇÃO PARA O PROXY
+  server: {
+    proxy: {
+      // Qualquer request começando com /api será redirecionado
+      '/api': {
+        target: 'http://localhost:5000', // O seu backend Flask
+        changeOrigin: true, // Necessário para o proxy funcionar
+        rewrite: (path) => path.replace(/^\/api/, '') // Remove /api antes de enviar ao backend
+      }
+    }
+  }
 })
