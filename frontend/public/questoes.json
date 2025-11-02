@@ -3,6 +3,7 @@
     {
       "pergunta": "Qual modelo de implantação de nuvem combina infraestrutura local (on-premises) com serviços de nuvem pública?",
       "opcoes": ["Nuvem Híbrida", "Nuvem Pública", "Nuvem Privada", "Nuvem Comunitária"],
+      "tipo": "unica",
       "respostaCorreta": "Nuvem Híbrida"
     },
     {
@@ -13,42 +14,20 @@
         "Apenas os dados e o acesso",
         "O hardware físico do data center"
       ],
+      "tipo": "unica",
       "respostaCorreta": "O sistema operacional, aplicações e dados"
     },
     {
       "pergunta": "Qual componente da infraestrutura global da AWS é um ou mais data centers independentes dentro de uma Região?",
       "opcoes": ["Availability Zone (AZ)", "Edge Location", "Region", "VPC"],
+      "tipo": "unica",
       "respostaCorreta": "Availability Zone (AZ)"
     },
     {
       "pergunta": "Qual é um dos principais benefícios da computação em nuvem, permitindo que você pague apenas pelo que usa?",
       "opcoes": ["Preço Pay-as-you-go", "Agilidade", "Elasticidade", "Alcance Global"],
+      "tipo": "unica",
       "respostaCorreta": "Preço Pay-as-you-go"
-    },
-    {
-      "pergunta": "Qual princípio da arquitetura em nuvem permite aumentar ou diminuir recursos automaticamente com base na demanda?",
-      "opcoes": ["Elasticidade", "Resiliência", "Disponibilidade", "Agilidade"],
-      "respostaCorreta": "Elasticidade"
-    },
-    {
-      "pergunta": "Qual é o principal benefício de usar múltiplas Availability Zones em uma aplicação?",
-      "opcoes": [
-        "Alta disponibilidade e tolerância a falhas",
-        "Reduzir custos de armazenamento",
-        "Melhorar desempenho de rede",
-        "Aumentar a velocidade de deploy"
-      ],
-      "respostaCorreta": "Alta disponibilidade e tolerância a falhas"
-    },
-    {
-      "pergunta": "O que significa o conceito de 'Shared Responsibility Model' na AWS?",
-      "opcoes": [
-        "A AWS gerencia a segurança da nuvem, o cliente gerencia a segurança dentro da nuvem",
-        "O cliente é responsável por toda a segurança",
-        "A AWS é responsável por toda a segurança",
-        "A segurança é automática para todos os serviços"
-      ],
-      "respostaCorreta": "A AWS gerencia a segurança da nuvem, o cliente gerencia a segurança dentro da nuvem"
     }
   ],
   "seguranca": [
@@ -60,168 +39,2903 @@
         "Segurança física dos data centers",
         "Gerenciar a rede global da AWS"
       ],
+      "tipo": "unica",
       "respostaCorreta": "Criptografar dados em repouso e em trânsito"
     },
     {
       "pergunta": "Qual serviço da AWS é usado para gerenciar usuários, grupos, papéis (roles) e permissões de acesso?",
       "opcoes": ["IAM (Identity and Access Management)", "AWS Shield", "Amazon GuardDuty", "AWS WAF"],
+      "tipo": "unica",
       "respostaCorreta": "IAM (Identity and Access Management)"
     },
     {
       "pergunta": "Qual serviço monitora métricas de desempenho dos recursos (como uso de CPU do EC2) e permite criar alarmes?",
       "opcoes": ["Amazon CloudWatch", "AWS CloudTrail", "Trusted Advisor", "VPC Flow Logs"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon CloudWatch"
     },
     {
       "pergunta": "Qual serviço registra todas as chamadas de API (quem fez o quê e quando) para fins de auditoria?",
       "opcoes": ["AWS CloudTrail", "Amazon CloudWatch", "AWS Config", "Amazon Inspector"],
+      "tipo": "unica",
       "respostaCorreta": "AWS CloudTrail"
     },
     {
       "pergunta": "[Armadilha] Quem é responsável por aplicar patches e atualizações no sistema operacional de uma instância EC2?",
       "opcoes": ["O Cliente", "A AWS", "O Gerente de Conta Técnico (TAM)", "O AWS Support (Plano Business)"],
+      "tipo": "unica",
       "respostaCorreta": "O Cliente"
-    },
-    {
-      "pergunta": "Qual serviço ajuda a detectar ameaças de segurança continuamente em contas e workloads da AWS usando Machine Learning?",
-      "opcoes": ["Amazon GuardDuty", "AWS Config", "AWS Shield Advanced", "AWS Firewall Manager"],
-      "respostaCorreta": "Amazon GuardDuty"
-    },
-    {
-      "pergunta": "Qual serviço ajuda a proteger aplicações web contra ataques comuns como SQL Injection e Cross-Site Scripting?",
-      "opcoes": ["AWS WAF", "AWS Shield", "Amazon Inspector", "AWS Secrets Manager"],
-      "respostaCorreta": "AWS WAF"
-    },
-    {
-      "pergunta": "Qual serviço da AWS automatiza a verificação de conformidade e vulnerabilidades em instâncias EC2?",
-      "opcoes": ["Amazon Inspector", "AWS Config", "AWS Trusted Advisor", "AWS Shield"],
-      "respostaCorreta": "Amazon Inspector"
     }
   ],
   "tecnologia": [
     {
       "pergunta": "Qual serviço da AWS fornece servidores virtuais (instâncias) na nuvem?",
       "opcoes": ["Amazon EC2", "AWS Lambda", "Amazon S3", "Amazon RDS"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon EC2"
     },
     {
       "pergunta": "Qual serviço permite executar código (funções) sem provisionar ou gerenciar servidores (serverless)?",
       "opcoes": ["AWS Lambda", "Amazon EC2", "Elastic Beanstalk", "Amazon EKS"],
+      "tipo": "unica",
       "respostaCorreta": "AWS Lambda"
     },
     {
       "pergunta": "Qual serviço é usado para armazenamento de objetos durável e escalável, ideal para backups, data lakes e arquivos estáticos?",
       "opcoes": ["Amazon S3", "Amazon EBS", "Amazon EFS", "Amazon RDS"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon S3"
     },
     {
       "pergunta": "Qual serviço da AWS é um banco de dados NoSQL (chave-valor) rápido e totalmente gerenciado?",
       "opcoes": ["Amazon DynamoDB", "Amazon RDS", "Amazon Redshift", "Amazon Aurora"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon DynamoDB"
     },
     {
       "pergunta": "Qual serviço é uma Rede de Distribuição de Conteúdo (CDN) que entrega dados e vídeos globalmente com baixa latência?",
       "opcoes": ["Amazon CloudFront", "Amazon S3", "VPC", "Direct Connect"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon CloudFront"
     },
     {
       "pergunta": "Qual serviço permite criar uma rede privada e isolada logicamente na nuvem da AWS?",
       "opcoes": ["Amazon VPC", "AWS Shield", "Subnet", "Internet Gateway"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon VPC"
-    },
-    {
-      "pergunta": "Qual serviço simplifica o deploy, escalonamento e gerenciamento de aplicações web sem precisar gerenciar servidores?",
-      "opcoes": ["AWS Elastic Beanstalk", "Amazon EC2", "Amazon ECS", "AWS Lambda"],
-      "respostaCorreta": "AWS Elastic Beanstalk"
-    },
-    {
-      "pergunta": "Qual serviço da AWS oferece containers gerenciados com suporte nativo a Docker?",
-      "opcoes": ["Amazon ECS", "Amazon EKS", "AWS Fargate", "Amazon Lightsail"],
-      "respostaCorreta": "Amazon ECS"
-    },
-    {
-      "pergunta": "Sua aplicação precisa processar grandes volumes de dados em tempo real. Qual serviço é mais indicado?",
-      "opcoes": ["Amazon Kinesis", "AWS Batch", "Amazon Athena", "AWS Glue"],
-      "respostaCorreta": "Amazon Kinesis"
-    },
-    {
-      "pergunta": "Qual serviço da AWS é usado para executar consultas SQL diretamente sobre dados no S3, sem precisar de servidor?",
-      "opcoes": ["Amazon Athena", "Amazon Redshift", "AWS Glue", "Amazon EMR"],
-      "respostaCorreta": "Amazon Athena"
     }
   ],
   "faturamento": [
     {
       "pergunta": "Qual tipo de instância EC2 oferece o maior desconto (até 90%), mas pode ser interrompida pela AWS a qualquer momento?",
       "opcoes": ["Spot Instances", "Reserved Instances", "On-Demand Instances", "Savings Plans"],
+      "tipo": "unica",
       "respostaCorreta": "Spot Instances"
     },
     {
       "pergunta": "Qual ferramenta da AWS permite visualizar, analisar e gerenciar seus custos e uso da AWS ao longo do tempo?",
       "opcoes": ["AWS Cost Explorer", "AWS Budgets", "Trusted Advisor", "AWS Organizations"],
+      "tipo": "unica",
       "respostaCorreta": "AWS Cost Explorer"
     },
     {
       "pergunta": "Qual serviço permite criar alertas que notificam você quando seus custos ou uso excedem um limite definido?",
       "opcoes": ["AWS Budgets", "AWS Cost Explorer", "Amazon CloudWatch", "AWS Pricing Calculator"],
+      "tipo": "unica",
       "respostaCorreta": "AWS Budgets"
     },
     {
       "pergunta": "Qual plano de suporte da AWS oferece acesso a um Gerente Técnico de Conta (TAM) dedicado?",
       "opcoes": ["Enterprise", "Business", "Developer", "Basic"],
+      "tipo": "unica",
       "respostaCorreta": "Enterprise"
-    },
-    {
-      "pergunta": "Sua empresa quer consolidar o faturamento de múltiplas contas AWS sob uma única fatura. Qual serviço usar?",
-      "opcoes": ["AWS Organizations", "AWS Budgets", "Cost Explorer", "Savings Plans"],
-      "respostaCorreta": "AWS Organizations"
-    },
-    {
-      "pergunta": "Qual ferramenta permite estimar custos antes de implantar recursos na AWS?",
-      "opcoes": ["AWS Pricing Calculator", "AWS Budgets", "AWS Cost Explorer", "Trusted Advisor"],
-      "respostaCorreta": "AWS Pricing Calculator"
-    },
-    {
-      "pergunta": "Qual plano de suporte é gratuito e inclui apenas acesso à documentação e fóruns?",
-      "opcoes": ["Basic", "Developer", "Business", "Enterprise"],
-      "respostaCorreta": "Basic"
     }
   ],
   "ia_ml": [
     {
       "pergunta": "Qual serviço é uma plataforma completa para construir, treinar e implantar modelos de machine learning (ML)?",
       "opcoes": ["Amazon SageMaker", "Amazon Bedrock", "Amazon Comprehend", "Amazon EC2"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon SageMaker"
     },
     {
       "pergunta": "Qual serviço é usado para reconhecimento facial e de objetos em imagens e vídeos?",
       "opcoes": ["Amazon Rekognition", "Amazon Comprehend", "Amazon Transcribe", "Amazon Polly"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon Rekognition"
     },
     {
       "pergunta": "Sua empresa precisa analisar o sentimento (positivo, negativo, neutro) em milhares de avaliações de clientes. Qual serviço usar?",
       "opcoes": ["Amazon Comprehend", "Amazon Translate", "Amazon Lex", "Amazon Polly"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon Comprehend"
     },
     {
       "pergunta": "Qual serviço da AWS permite acessar e usar modelos de IA generativa (como Claude, Llama 2) por meio de uma API?",
       "opcoes": ["Amazon Bedrock", "Amazon SageMaker", "Amazon Lex", "AWS Lambda"],
+      "tipo": "unica",
       "respostaCorreta": "Amazon Bedrock"
     },
     {
       "pergunta": "Qual serviço converte texto em fala (Text-to-Speech) com som natural?",
       "opcoes": ["Amazon Polly", "Amazon Transcribe", "Amazon Lex", "Amazon Translate"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Polly"
+    }
+  ],
+  "simulado_1": [
+    {
+      "pergunta": "Utilizar o Amazon Elastic Container Service (Amazon ECS) para decompor uma arquitetura monolítica em microsserviços é um exemplo de:",
+      "opcoes": [
+        "uma arquitetura fracamente acoplada.",
+        "uma arquitetura fortemente acoplada.",
+        "uma arquitetura sem estado.",
+        "uma arquitetura com estado."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "uma arquitetura fracamente acoplada."
+    },
+    {
+      "pergunta": "Quais são os serviços da AWS que são serviços de conectividade para uma VPC? (Selecione DUAS.)",
+      "opcoes": [
+        "AWS Site-to-Site VPN",
+        "AWS Direct Connect",
+        "Amazon Connect",
+        "AWS Key Management Service (AWS KMS)",
+        "AWS Identity and Access Management (IAM)"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["AWS Site-to-Site VPN", "AWS Direct Connect"]
+    },
+    {
+      "pergunta": "Qual serviço da AWS oferece aos usuários a capacidade de provisionar uma conexão de rede dedicada e privada de sua rede interna para a AWS?",
+      "opcoes": [
+        "AWS Direct Connect",
+        "AWS CloudHSM",
+        "AWS VPN",
+        "Amazon Connect"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Direct Connect"
+    },
+    {
+      "pergunta": "Quais serviços da AWS podem limitar erros manuais ao provisionar consistentemente recursos da AWS em vários ambientes? (Selecione DUAS.)",
+      "opcoes": [
+        "AWS Config",
+        "AWS CodeStar",
+        "AWS CloudFormation",
+        "AWS Cloud Development Kit (AWS CDK)",
+        "AWS CodeBuild"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["AWS CloudFormation", "AWS Cloud Development Kit (AWS CDK)"]
+    },
+    {
+      "pergunta": "Uma empresa precisa bloquear ataques de injeção de SQL. Qual serviço ou recurso da AWS pode atender a esse requisito?",
+      "opcoes": ["AWS WAF", "AWS Shield", "Network ACLs", "Security groups"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS WAF"
+    },
+    {
+      "pergunta": "Uma empresa deseja gerenciar seus recursos na AWS por meio de uma interface web. Qual serviço da AWS atenderá a esse requisito?",
+      "opcoes": [
+        "AWS Management Console",
+        "AWS CLI",
+        "AWS SDK",
+        "AWS Cloud"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Management Console"
+    },
+    {
+      "pergunta": "Qual recurso da AWS Cloud oferece aos usuários a capacidade de pagar com base nas necessidades atuais em vez de nas necessidades previstas?",
+      "opcoes": [
+        "Preço sob demanda (Pay-as-you-go pricing)",
+        "Orçamentos da AWS (AWS Budgets)",
+        "Descontos por volume (Volume discounts)",
+        "Planos de Economia (Savings Plans)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Preço sob demanda (Pay-as-you-go pricing)"
+    },
+    {
+      "pergunta": "Uma empresa quer uma avaliação personalizada de seu ambiente local para entender seus custos previstos em execução na AWS Cloud. Qual serviço ou ferramenta da AWS atenderá a esses requisitos?",
+      "opcoes": [
+        "Migration Evaluator",
+        "AWS Trusted Advisor",
+        "Amazon Inspector",
+        "AWS Control Tower"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Migration Evaluator"
+    },
+    {
+      "pergunta": "Quais opções são capacidades da perspectiva de segurança do AWS Cloud Adoption Framework (AWS CAF)? (Selecione DUAS.)",
+      "opcoes": [
+        "Observabilidade",
+        "Gerenciamento de incidentes e problemas",
+        "Resposta a incidentes",
+        "Proteção de infraestrutura",
+        "Disponibilidade e continuidade"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Gerenciamento de incidentes e problemas", "Resposta a incidentes"]
+    },
+    {
+      "pergunta": "Qual dos seguintes atua como um firewall de nível de instância para controlar o acesso de entrada e saída?",
+      "opcoes": [
+        "Security groups",
+        "Network access control list",
+        "AWS Trusted Advisor",
+        "Virtual private gateways"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Security groups"
+    },
+    {
+      "pergunta": "Qual princípio de design da AWS Cloud uma empresa está seguindo ao utilizar o AWS CloudTrail?",
+      "opcoes": [
+        "Garantir rastreabilidade.",
+        "Recuperar automaticamente.",
+        "Realizar operações como código.",
+        "Medir eficiência."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Garantir rastreabilidade."
+    },
+    {
+      "pergunta": "Uma empresa deseja integrar NLP em painéis de BI, permitindo fazer perguntas e receber respostas com visualizações. Qual serviço atenderá a esses requisitos?",
+      "opcoes": [
+        "Amazon QuickSight Q",
+        "Amazon Macie",
+        "Amazon Rekognition",
+        "Amazon Lex"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon QuickSight Q"
+    },
+    {
+      "pergunta": "Quais dos seguintes são serviços de autenticação de usuários gerenciados pela AWS? (Selecione DOIS.)",
+      "opcoes": [
+        "Amazon Cognito",
+        "AWS Lambda",
+        "AWS License Manager",
+        "AWS Identity and Access Management (IAM)",
+        "AWS CodeStar"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Amazon Cognito", "AWS Identity and Access Management (IAM)"]
+    },
+    {
+      "pergunta": "Uma empresa quer monitorar o desempenho da carga de trabalho para garantir que os serviços atendam às necessidades do negócio. Qual perspectiva do AWS CAF atenderá a esses requisitos?",
+      "opcoes": ["Operações", "Negócios", "Governança", "Plataforma"],
+      "tipo": "unica",
+      "respostaCorreta": "Operações"
+    },
+    {
+      "pergunta": "Quais serviços ou recursos de rede da AWS permitem a notação de bloco CIDR ao fornecer um intervalo de endereços IP? (Selecione DOIS.)",
+      "opcoes": [
+        "Security Groups",
+        "Amazon Machine Image (AMI)",
+        "Network access control list (network ACL)",
+        "AWS Budgets",
+        "Amazon Elastic Block Store (Amazon EBS)"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Security Groups", "Network access control list (network ACL)"]
+    },
+    {
+      "pergunta": "Para reduzir custos, uma empresa está migrando um banco de dados NoSQL para a AWS. Qual serviço totalmente gerenciado pode dimensionar automaticamente a capacidade de throughput?",
+      "opcoes": [
+        "Amazon DynamoDB",
+        "Amazon Redshift",
+        "Amazon Aurora",
+        "Amazon RDS"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon DynamoDB"
+    },
+    {
+      "pergunta": "Uma empresa precisa agrupar usuários e aplicar permissões ao grupo. Qual serviço a empresa pode usar?",
+      "opcoes": [
+        "AWS Identity and Access Management (IAM)",
+        "AWS Organizations",
+        "Resource groups",
+        "Resource tagging"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Identity and Access Management (IAM)"
+    },
+    {
+      "pergunta": "Uma empresa precisa definir um limite máximo de gastos mensais e configurar alertas para quando atingir esse limite. Qual serviço a empresa deve usar?",
+      "opcoes": [
+        "AWS Budgets",
+        "Cost Explorer",
+        "AWS Trusted Advisor",
+        "Service Quotas"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Budgets"
+    },
+    {
+      "pergunta": "Qual serviço ou ferramenta da AWS ajuda as empresas a medirem o impacto ambiental do uso de seus serviços na AWS?",
+      "opcoes": [
+        "AWS Customer Carbon Footprint Tool",
+        "AWS Compute Optimizer",
+        "Pilar de Sustentabilidade - Well-Architected Framework",
+        "OS-Climate (Open Source Climate Data Commons)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Customer Carbon Footprint Tool"
+    },
+    {
+      "pergunta": "Qual opção é um pilar do AWS Well-Architected Framework?",
+      "opcoes": [
+        "Otimização de Custos",
+        "Gerenciamento de Patch",
+        "Estratégia de Tecnologia de Negócios",
+        "Controles Físicos e Ambientais"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Otimização de Custos"
+    },
+    {
+      "pergunta": "Uma empresa deseja acessar um relatório sobre o impacto ambiental estimado do uso da AWS. Qual serviço ou recurso a empresa deve usar?",
+      "opcoes": [
+        "AWS Billing console",
+        "AWS Organizations",
+        "IAM policy",
+        "Amazon Simple Notification Service (Amazon SNS)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Billing console"
+    },
+    {
+      "pergunta": "Uma empresa está lançando uma aplicação crítica no Amazon RDS em uma Região. Como a empresa pode aumentar a resiliência para esta aplicação?",
+      "opcoes": [
+        "Implantar a aplicação usando várias Zonas de Disponibilidade.",
+        "Implantar uma cópia da aplicação em outra conta da AWS.",
+        "Implantar a aplicação usando várias VPCs.",
+        "Implantar a aplicação usando várias sub-redes."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Implantar a aplicação usando várias Zonas de Disponibilidade."
+    },
+    {
+      "pergunta": "Qual serviço permite que os clientes auditem chamadas de API em suas contas da AWS?",
+      "opcoes": [
+        "AWS CloudTrail",
+        "AWS Trusted Advisor",
+        "Amazon Inspector",
+        "AWS X-Ray"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "Qual serviço da AWS uma empresa pode usar para encontrar relatórios de segurança e conformidade, incluindo relatórios da ISO?",
+      "opcoes": [
+        "AWS Artifact",
+        "Amazon CloudWatch",
+        "AWS Config",
+        "AWS Audit Manager"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Artifact"
+    },
+    {
+      "pergunta": "Uma empresa precisa identificar quem acessou um serviço da AWS e qual ação foi realizada em um determinado período de tempo. Qual serviço a empresa deve usar?",
+      "opcoes": [
+        "AWS CloudTrail",
+        "Amazon CloudWatch",
+        "AWS Security Hub",
+        "Amazon Inspector"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "Qual é uma característica das Instâncias Reservadas Conversíveis (Convertible RIs)?",
+      "opcoes": [
+        "Os usuários podem trocar Convertible RIs por outros Convertible RIs de uma família de instâncias diferente.",
+        "Os usuários podem trocar Convertible RIs por outros Convertible RIs em diferentes Regiões da AWS.",
+        "Os usuários podem vender e comprar Convertible RIs no AWS Marketplace.",
+        "Os usuários podem reduzir o prazo de suas Convertible RIs ao fundi-las."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Os usuários podem trocar Convertible RIs por outros Convertible RIs de uma família de instâncias diferente."
+    },
+    {
+      "pergunta": "Quais dos seguintes são princípios de design para confiabilidade na AWS Cloud? (Selecione DUAS.)",
+      "opcoes": [
+        "Utilizar automação para se recuperar imediatamente de falhas.",
+        "Simular falhas para testar os processos de recuperação.",
+        "Construir arquiteturas com recursos fortemente acoplados.",
+        "Utilizar o AWS Trusted Advisor para atender às melhores práticas de segurança.",
+        "Adequar o tamanho das instâncias do Amazon EC2 para garantir desempenho ideal."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Utilizar automação para se recuperar imediatamente de falhas.", "Simular falhas para testar os processos de recuperação."]
+    },
+    {
+      "pergunta": "Uma empresa deseja que os usuários possam usar suas contas de redes sociais (Facebook, Google) para acessar sua aplicação. Qual serviço da AWS fornece essa funcionalidade?",
+      "opcoes": [
+        "Amazon Cognito",
+        "Centro de Identidade da AWS IAM (AWS Single Sign-On)",
+        "AWS Config",
+        "AWS Identity and Access Management (IAM)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Cognito"
+    },
+    {
+      "pergunta": "Uma empresa de mídia social deseja identificar e remover fotos inapropriadas, mas não possui expertise em ML. Qual serviço da AWS deve usar?",
+      "opcoes": [
+        "Amazon Rekognition",
+        "Amazon SageMaker",
+        "Amazon Textract",
+        "Amazon Comprehend"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Rekognition"
+    },
+    {
+      "pergunta": "Uma empresa está utilizando o Amazon DynamoDB. Quais tarefas são responsabilidade da AWS, de acordo com o modelo de responsabilidade compartilhada?",
+      "opcoes": [
+        "Gerenciar a camada de infraestrutura e o sistema operacional.",
+        "Classificar dados.",
+        "Configurar permissões de acesso.",
+        "Gerenciar opções de criptografia."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Gerenciar a camada de infraestrutura e o sistema operacional."
+    },
+    {
+      "pergunta": "Uma empresa projetou sua infraestrutura para executar cargas de trabalho eficazmente e possui protocolos para melhorar continuamente os processos. A qual pilar do AWS Well-Architected Framework esse cenário representa?",
+      "opcoes": [
+        "Excelência operacional",
+        "Segurança",
+        "Eficiência de desempenho",
+        "Otimização de custos"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Excelência operacional"
+    },
+    {
+      "pergunta": "Qual recurso da AWS é um modelo de instância Amazon EC2 implantável que já vem pré-embalado com software e requisitos de segurança?",
+      "opcoes": [
+        "Imagem de Máquina da Amazon (AMI)",
+        "Volume do Amazon Elastic Block Store (Amazon EBS)",
+        "Modelo do AWS CloudFormation",
+        "Snapshot do Amazon Elastic Block Store (Amazon EBS)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Imagem de Máquina da Amazon (AMI)"
+    },
+    {
+      "pergunta": "Uma empresa possui instâncias EC2, Lightsail e servidores locais, e deseja automatizar as atualizações de segurança para SO e aplicativos com o MENOR esforço. Qual solução atende?",
+      "opcoes": [
+        "Utilizar a capacidade de Gerenciador de Patch da AWS Systems Manager.",
+        "Utilizar o AWS Shield.",
+        "Conectar-se a cada servidor via RDP e executar um script.",
+        "Agendar o Amazon GuardDuty para ser executado diariamente."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Utilizar a capacidade de Gerenciador de Patch da AWS Systems Manager."
+    },
+    {
+      "pergunta": "Uma empresa deseja permitir que os usuários autentiquem em várias contas AWS usando um único conjunto de credenciais. Qual serviço atenderá a esse requisito?",
+      "opcoes": [
+        "Centro de Identidade IAM da AWS (AWS Single Sign-On)",
+        "AWS Organizations",
+        "Usuário IAM",
+        "AWS Control Tower"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Centro de Identidade IAM da AWS (AWS Single Sign-On)"
+    },
+    {
+      "pergunta": "Uma empresa deseja monitorar grupos de segurança mal configurados que estão permitindo acesso irrestrito a portas específicas. Qual serviço atenderá a esse requisito?",
+      "opcoes": [
+        "AWS Trusted Advisor",
+        "Amazon CloudWatch",
+        "Amazon GuardDuty",
+        "Painel de Controle de Saúde da AWS (AWS Health Dashboard)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Trusted Advisor"
+    },
+    {
+      "pergunta": "Qual vantagem da computação em nuvem da AWS minimiza os custos variáveis ao agregar o uso através de centenas de milhares de usuários?",
+      "opcoes": [
+        "Economias de escala",
+        "Alta disponibilidade",
+        "Alcance global",
+        "Agilidade"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Economias de escala"
+    },
+    {
+      "pergunta": "A AWS alcança preços mais baixos no modelo 'pague conforme o uso' ao agregar o uso através de centenas de milhares de usuários. Isso descreve qual vantagem?",
+      "opcoes": [
+        "Altas economias de escala",
+        "Lançamento global em minutos",
+        "Aumento de velocidade e agilidade",
+        "Sem adivinhação sobre a capacidade de computação"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Altas economias de escala"
+    },
+    {
+      "pergunta": "Uma empresa está planejando sua migração e identificando lacunas em suas capacidades usando as perspectivas do AWS CAF. Em qual fase da jornada de transformação para a nuvem estão incluídas essas atividades?",
+      "opcoes": ["Alinhamento", "Visão", "Escala", "Lançamento"],
+      "tipo": "unica",
+      "respostaCorreta": "Alinhamento"
+    },
+    {
+      "pergunta": "Qual é o propósito de ter um gateway de internet (Internet Gateway) dentro de uma VPC?",
+      "opcoes": [
+        "Permitir a comunicação entre a VPC e a internet",
+        "Criar uma conexão VPN com a VPC",
+        "Impor restrições de largura de banda no tráfego da internet",
+        "Balancear o tráfego da internet entre instâncias Amazon EC2"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Permitir a comunicação entre a VPC e a internet"
+    },
+    {
+      "pergunta": "Qual serviço da AWS converte texto em vozes realistas?",
+      "opcoes": [
+        "Amazon Polly",
+        "Amazon Transcribe",
+        "Amazon Rekognition",
+        "Amazon Textract"
+      ],
+      "tipo": "unica",
       "respostaCorreta": "Amazon Polly"
     },
     {
-      "pergunta": "Qual serviço converte áudio em texto automaticamente (Speech-to-Text)?",
-      "opcoes": ["Amazon Transcribe", "Amazon Polly", "Amazon Translate", "Amazon Lex"],
-      "respostaCorreta": "Amazon Transcribe"
+      "pergunta": "Uma empresa precisa de uma CDN que forneça entrega segura de dados, vídeos e APIs para usuários globalmente, com baixa latência. Qual serviço atende a esses requisitos?",
+      "opcoes": [
+        "Amazon CloudFront",
+        "Elastic Load Balancing",
+        "Amazon S3",
+        "Amazon Elastic Transcoder"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon CloudFront"
     },
     {
-      "pergunta": "Sua aplicação precisa traduzir texto em tempo real. Qual serviço utilizar?",
-      "opcoes": ["Amazon Translate", "Amazon Comprehend", "Amazon Polly", "Amazon Transcribe"],
-      "respostaCorreta": "Amazon Translate"
+      "pergunta": "Usuários de todo o mundo farão o download de manuais digitais (arquivos estáticos) de um site. Qual solução da AWS deve ser usada para fornecer esses arquivos de forma segura e com baixa latência?",
+      "opcoes": [
+        "Amazon CloudFront com Amazon S3",
+        "Amazon Kinesis Data Streams",
+        "Instâncias Amazon EC2 com um Application Load Balancer",
+        "Sistema de Arquivos Elástico da Amazon (Amazon EFS)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon CloudFront com Amazon S3"
+    },
+    {
+      "pergunta": "Uma empresa está construindo uma aplicação que precisa entregar imagens e vídeos globalmente com latência mínima. Qual abordagem é a mais eficaz em termos de custo?",
+      "opcoes": [
+        "Entregar o conteúdo por meio do Amazon CloudFront.",
+        "Armazenar o conteúdo no Amazon S3 e habilitar a replicação inter-regional.",
+        "Implementar uma VPN em várias Regiões da AWS.",
+        "Entregar o conteúdo por meio do AWS PrivateLink."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Entregar o conteúdo por meio do Amazon CloudFront."
+    },
+    {
+      "pergunta": "Qual serviço da AWS um administrador poderia usar para fornecer ambientes de desktop virtuais para vários funcionários?",
+      "opcoes": [
+        "AWS Workspaces",
+        "AWS Organizations",
+        "AWS Fargate",
+        "AWS WAF"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Workspaces"
+    },
+    {
+      "pergunta": "Uma empresa planeja migrar sua carga de trabalho local e precisa estimar os futuros custos de serviços da AWS. Qual serviço ou ferramenta a empresa deve usar?",
+      "opcoes": [
+        "AWS Pricing Calculator",
+        "AWS Trusted Advisor",
+        "AWS Budgets",
+        "AWS Cost Explorer"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Pricing Calculator"
+    },
+    {
+      "pergunta": "Uma empresa busca economias de custo em troca de um compromisso de 1 ou 3 anos para uma quantidade específica de um serviço. Qual modelo de precificação atenderá a esses requisitos?",
+      "opcoes": [
+        "Savings Plans",
+        "Precificação pay-as-you-go",
+        "AWS Free Tier",
+        "Descontos por volume"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Savings Plans"
+    },
+    {
+      "pergunta": "Quais ações são boas práticas para um usuário raiz de uma conta AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Compartilhar credenciais do usuário raiz com membros da equipe.",
+        "Criar vários usuários raiz para a conta, separados por ambiente.",
+        "Habilitar autenticação multifator (MFA) no usuário raiz.",
+        "Criar um usuário IAM com privilégios de administrador para tarefas administrativas diárias.",
+        "Utilizar acesso programático em vez do usuário raiz e senha."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Habilitar autenticação multifator (MFA) no usuário raiz.", "Criar um usuário IAM com privilégios de administrador para tarefas administrativas diárias."]
+    },
+    {
+      "pergunta": "Qual serviço ou ferramenta da AWS fornece aos usuários a capacidade de monitorar quotas de serviços AWS?",
+      "opcoes": [
+        "AWS Trusted Advisor",
+        "AWS CloudTrail",
+        "Relatórios de custo e uso da AWS",
+        "AWS Budgets"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Trusted Advisor"
+    },
+    {
+      "pergunta": "O site de uma empresa está sofrendo ataques DDoS. Qual serviço da AWS pode ajudar a proteger o site contra esses ataques?",
+      "opcoes": [
+        "AWS Shield",
+        "AWS Resource Access Manager",
+        "AWS Amplify",
+        "Amazon GuardDuty"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Shield"
+    },
+    {
+      "pergunta": "Uma empresa precisa arquivar dados do S3 que não precisam mais ser acessados. Qual classe de armazenamento S3 atenderá a esse requisito da maneira mais econômica?",
+      "opcoes": [
+        "S3 Glacier Deep Archive",
+        "S3 Glacier Instant Retrieval",
+        "S3 Glacier Flexible Retrieval",
+        "S3 One Zone-Infrequent Access (S3 One Zone-IA)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "S3 Glacier Deep Archive"
+    },
+    {
+      "pergunta": "Quais tarefas são responsabilidades do cliente, de acordo com o modelo de responsabilidade compartilhada da AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Configurar o firewall do grupo de segurança fornecido pela AWS.",
+        "Garantir a segurança física do centro de dados.",
+        "Aplicar patches ou fazer upgrades nos sistemas operacionais da instância EC2.",
+        "Aplicar patches ou fazer upgrades no Amazon DynamoDB.",
+        "Garantir a criptografia na camada física da rede."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Configurar o firewall do grupo de segurança fornecido pela AWS.", "Aplicar patches ou fazer upgrades nos sistemas operacionais da instância EC2."]
+    },
+    {
+      "pergunta": "Um auditor precisa verificar se um serviço específico da AWS está em conformidade com determinados padrões de conformidade. Qual serviço fornecerá essas informações?",
+      "opcoes": [
+        "AWS Artifact",
+        "AWS Trusted Advisor",
+        "Amazon GuardDuty",
+        "AWS Certificate Manager (ACM)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Artifact"
+    },
+    {
+      "pergunta": "Qual pilar do AWS Well-Architected Framework inclui o modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": ["Segurança", "Excelência operacional", "Eficiência de desempenho", "Confiabilidade"],
+      "tipo": "unica",
+      "respostaCorreta": "Segurança"
+    },
+    {
+      "pergunta": "Qual capacidade do AWS Cloud Adoption Framework (AWS CAF) pertence à perspectiva das pessoas?",
+      "opcoes": [
+        "Fluência em nuvem",
+        "Arquitetura de dados",
+        "Gerenciamento de eventos",
+        "Parceria estratégica"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Fluência em nuvem"
+    },
+    {
+      "pergunta": "Uma empresa deseja rastrear os custos de infraestrutura para cada projeto separadamente, com o menor impacto possível e sem custos adicionais. O que a empresa deve fazer?",
+      "opcoes": [
+        "Usar tags de alocação de custos com valores específicos para cada projeto.",
+        "Usar um tipo de instância EC2 diferente para cada projeto.",
+        "Publicar métricas personalizadas no CloudWatch para cada aplicativo.",
+        "Implementar instâncias EC2 para cada projeto em uma conta AWS separada."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Usar tags de alocação de custos com valores específicos para cada projeto."
+    },
+    {
+      "pergunta": "Um desenvolvedor deseja escrever uma consulta simples que possa ler arquivos .csv no S3 e gerar um relatório resumido, com MÍNIMO esforço operacional. Qual serviço deve usar?",
+      "opcoes": [
+        "Amazon Athena",
+        "Amazon S3 Select",
+        "Amazon Redshift",
+        "Amazon EC2"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Athena"
+    },
+    {
+      "pergunta": "O que é uma Zona de Disponibilidade (Availability Zone)?",
+      "opcoes": [
+        "Um ou mais data centers discretos com energia, rede e conectividade redundantes.",
+        "Um local onde os usuários podem implantar serviços onde nenhuma Região da AWS existe.",
+        "Um ou mais grupos de servidores nos quais novas cargas de trabalho podem ser implantadas.",
+        "Um serviço de rede de entrega de conteúdo (CDN) rápido."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Um ou mais data centers discretos com energia, rede e conectividade redundantes."
+    },
+    {
+      "pergunta": "Qual é uma responsabilidade da AWS no modelo de responsabilidade compartilhada?",
+      "opcoes": [
+        "Garantir a segurança da rede interna nos data centers da AWS.",
+        "Configurar as regras de grupo de segurança em uma instância EC2.",
+        "Aplicar patches no sistema operacional convidado no Amazon EC2.",
+        "Ativar a criptografia no lado do servidor para os buckets do Amazon S3."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Garantir a segurança da rede interna nos data centers da AWS."
+    },
+    {
+      "pergunta": "Quais dos seguintes são princípios de design na nuvem da AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Tomar decisões baseadas em dados para determinar o design arquitetônico na nuvem.",
+        "Testar sistemas em escala de produção.",
+        "Pagar antecipadamente por recursos de computação.",
+        "Enfatizar processos manuais para permitir alterações.",
+        "Refinar os procedimentos operacionais infrequentemente."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Tomar decisões baseadas em dados para determinar o design arquitetônico na nuvem.", "Testar sistemas em escala de produção."]
+    },
+    {
+      "pergunta": "Uma empresa deseja garantir que todas as suas instâncias Amazon EC2 tenham patches de sistema operacional em conformidade. Qual serviço atenderá a esses requisitos?",
+      "opcoes": [
+        "AWS Systems Manager",
+        "AWS Compute Optimizer",
+        "AWS Elastic Beanstalk",
+        "AWS AppSync"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Systems Manager"
+    },
+    {
+      "pergunta": "Um praticante de nuvem está analisando o desempenho e o uso de instâncias EC2 para fornecer recomendações de economia de custos. Qual conceito de nuvem essa análise demonstra?",
+      "opcoes": [
+        "Dimensionamento correto (Right sizing)",
+        "Escalonamento automático (Auto scaling)",
+        "Balanceamento de carga (Load balancing)",
+        "Alta disponibilidade (High availability)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Dimensionamento correto (Right sizing)"
+    },
+    {
+      "pergunta": "Qual princípio de design deve ser considerado ao arquitetar na AWS Cloud?",
+      "opcoes": [
+        "Projete componentes fracamente acoplados.",
+        "Considere servidores como recursos não descartáveis.",
+        "Utilize integração síncrona de serviços.",
+        "Implemente regras menos permissivas para grupos de segurança."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Projete componentes fracamente acoplados."
+    },
+    {
+      "pergunta": "Qual característica da AWS Cloud ajuda os usuários a eliminar a capacidade de CPU subutilizada, permitindo dimensionar para cima ou para baixo conforme a demanda?",
+      "opcoes": ["Elasticidade", "Agilidade", "Confiabilidade", "Durabilidade"],
+      "tipo": "unica",
+      "respostaCorreta": "Elasticidade"
+    },
+    {
+      "pergunta": "Qual serviço suporta uma arquitetura híbrida que estende a infraestrutura e serviços da AWS para data centers locais?",
+      "opcoes": [
+        "AWS Outposts",
+        "AWS Snowmobile",
+        "AWS Local Zones",
+        "AWS Fargate"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Outposts"
+    },
+    {
+      "pergunta": "Quais motores de banco de dados o Amazon Aurora suporta? (Selecione DUAS.)",
+      "opcoes": [
+        "Oracle",
+        "Microsoft SQL Server",
+        "MySQL",
+        "PostgreSQL",
+        "MongoDB"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["MySQL", "PostgreSQL"]
+    }
+  ]
+  ,
+
+  "simulado_2": [
+    {
+      "pergunta": "Qual mecanismo de banco de dados é compatível com o Amazon RDS?",
+      "opcoes": ["Apache Cassandra", "MongoDB", "Neo4j", "PostgreSQL"],
+      "tipo": "unica",
+      "respostaCorreta": "PostgreSQL"
+    },
+    {
+      "pergunta": "Uma grande empresa deseja acompanhar os custos combinados de uso da AWS de todas as suas contas vinculadas. Como isso pode ser feito?",
+      "opcoes": [
+        "Usar o AWS Trusted Advisor para gerar relatórios resumidos personalizados.",
+        "Usar o AWS Organizations para gerar relatórios de faturamento consolidado.",
+        "Usar o AWS Budgets para definir metas de utilização e receber relatórios resumidos.",
+        "Usar o painel de controle do AWS Control Tower para obter um relatório resumido."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Usar o AWS Organizations para gerar relatórios de faturamento consolidado."
+    },
+    {
+      "pergunta": "Quais controles são responsabilidade tanto da AWS quanto dos clientes da AWS, de acordo com o modelo de responsabilidade compartilhada da AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Controles físicos e ambientais",
+        "Gerenciamento de patches",
+        "Gerenciamento de configurações",
+        "Estruturas de conta",
+        "Escolha da Região da AWS onde os dados são armazenados"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Gerenciamento de patches", "Gerenciamento de configurações"]
+    },
+    {
+      "pergunta": "Uma empresa deseja que suas instâncias Amazon EC2 operem em um ambiente altamente disponível, mesmo em caso de desastre natural em uma área geográfica específica. Qual solução atinge esse objetivo?",
+      "opcoes": [
+        "Utilizar instâncias EC2 em uma única Zona de Disponibilidade (Availability Zone).",
+        "Utilizar instâncias EC2 em várias Regiões da AWS.",
+        "Utilizar instâncias EC2 em várias localidades de borda (edge locations).",
+        "Utilizar o Amazon CloudFront com as instâncias EC2 configuradas como a origem."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Utilizar instâncias EC2 em várias Regiões da AWS."
+    },
+    {
+      "pergunta": "Uma empresa precisa usar painéis e gráficos para analisar insights a partir de dados comerciais. Qual serviço da AWS fornecerá os painéis e gráficos para esses insights?",
+      "opcoes": ["Amazon Macie", "Amazon Aurora", "Amazon QuickSight", "AWS CloudTrail"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon QuickSight"
+    },
+    {
+      "pergunta": "Qual plano de suporte da AWS atribui um agente concierge da AWS à conta de uma empresa?",
+      "opcoes": ["AWS Basic Support", "AWS Developer Support", "AWS Business Support", "AWS Enterprise Support"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Enterprise Support"
+    },
+    {
+      "pergunta": "Uma empresa deseja criar um chatbot e integrá-lo à sua aplicação web atual. Qual serviço da AWS atenderá a esses requisitos?",
+      "opcoes": ["Amazon Kendra", "Amazon Lex", "Amazon Textract", "Amazon Polly"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Lex"
+    },
+    {
+      "pergunta": "Qual serviço da AWS uma empresa pode usar para projetar e construir visualmente aplicações sem servidor?",
+      "opcoes": ["AWS Lambda", "AWS Batch", "AWS Application Composer", "AWS App Runner"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Application Composer"
+    },
+    {
+      "pergunta": "Uma aplicação precisa estar em conformidade com requisitos regulatórios de cartões de crédito. A empresa precisa de evidências. Quais ações a empresa deve tomar para atender a esses requisitos? (Selecione DUAS.)",
+      "opcoes": [
+        "Usar o Amazon Inspector para enviar a aplicação para certificação.",
+        "Garantir que os componentes de hardware subjacentes da aplicação estejam em conformidade.",
+        "Usar o AWS Artifact para acessar documentos da AWS sobre a conformidade dos serviços.",
+        "Obter a certificação de conformidade da aplicação por um avaliador externo.",
+        "Usar o AWS Security Hub para certificar a conformidade da aplicação."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Usar o AWS Artifact para acessar documentos da AWS sobre a conformidade dos serviços.", "Obter a certificação de conformidade da aplicação por um avaliador externo."]
+    },
+    {
+      "pergunta": "Uma empresa está revisando o design de uma aplicação que será migrada para uma única instância EC2. O que a empresa deve fazer para tornar a aplicação altamente disponível?",
+      "opcoes": [
+        "Provisionar instâncias EC2 adicionais em outras Zonas de Disponibilidade.",
+        "Configurar um Balanceador de Carga de Aplicativo (ALB). Atribuir a instância EC2 como o alvo do ALB.",
+        "Usar uma Imagem de Máquina Amazon (AMI) para criar a instância EC2.",
+        "Provisionar a aplicação usando uma Instância Spot do EC2."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Provisionar instâncias EC2 adicionais em outras Zonas de Disponibilidade."
+    },
+    {
+      "pergunta": "Uma empresa planeja identificar e priorizar oportunidades de transformação de negócios e avaliar sua prontidão para a AWS Cloud. Qual serviço ou ferramenta a empresa deve usar?",
+      "opcoes": [
+        "AWS Cloud Adoption Framework (AWS CAF)",
+        "AWS Managed Services (AMS)",
+        "AWS Well-Architected Framework",
+        "AWS Migration Hub"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Cloud Adoption Framework (AWS CAF)"
+    },
+    {
+      "pergunta": "Uma empresa precisa implantar aplicativos na AWS Cloud o mais rápido possível e minimizar a complexidade de gerenciamento. Qual serviço da AWS a empresa deve usar?",
+      "opcoes": ["AWS Config", "AWS Elastic Beanstalk", "Amazon EC2", "Amazon Personalize"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Elastic Beanstalk"
+    },
+    {
+      "pergunta": "Qual serviço ou recurso da AWS procurará e identificará recursos da AWS que são compartilhados externamente?",
+      "opcoes": ["Amazon OpenSearch Service", "AWS Control Tower", "AWS IAM Access Analyzer", "AWS Fargate"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS IAM Access Analyzer"
+    },
+    {
+      "pergunta": "Quais serviços ou recursos da AWS podem controlar o tráfego na VPC? (Selecione DOIS.)",
+      "opcoes": ["Security groups", "AWS Direct Connect", "Amazon GuardDuty", "Network ACLs", "Amazon Connect"],
+      "tipo": "multipla",
+      "respostaCorreta": ["Security groups", "Network ACLs"]
+    },
+    {
+      "pergunta": "Uma empresa precisa de uma solução gerenciada para o armazenamento de dados (Microsoft SQL Server), permitindo focar no desenvolvimento. Qual serviço usar?",
+      "opcoes": [
+        "Amazon FSx for Windows File Server",
+        "Amazon Workspaces virtual Windows desktop",
+        "AWS Directory Service for Microsoft Active Directory",
+        "Amazon RDS for Microsoft SQL Server"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon RDS for Microsoft SQL Server"
+    },
+    {
+      "pergunta": "Uma empresa criou um Relatório de Custos e Uso da AWS e deseja visualizar o relatório. Qual serviço a empresa deve usar para ingerir e exibir essas informações?",
+      "opcoes": ["Amazon QuickSight", "Amazon Pinpoint", "Amazon Neptune", "Amazon Kinesis"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon QuickSight"
+    },
+    {
+      "pergunta": "Qual dos seguintes é um pilar do AWS Well-Architected Framework?",
+      "opcoes": ["Redundância", "Excelência operacional", "Disponibilidade", "Multi-Region"],
+      "tipo": "unica",
+      "respostaCorreta": "Excelência operacional"
+    },
+    {
+      "pergunta": "O que um profissional de nuvem pode usar para recuperar documentos de segurança e conformidade da AWS e apresentá-los como evidência a um auditor ou regulador?",
+      "opcoes": ["AWS Certificate Manager", "AWS Systems Manager", "AWS Artifact", "Amazon Inspector"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Artifact"
+    },
+    {
+      "pergunta": "Uma empresa deseja armazenar dados com alta disponibilidade, criptografar os dados em repouso e ter acesso direto aos dados pela internet. Qual serviço atende a esses requisitos de forma MAIS eficaz em termos de custo?",
+      "opcoes": ["Amazon Elastic Block Store (Amazon EBS)", "Amazon S3", "Amazon Elastic File System (Amazon EFS)", "AWS Storage Gateway"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon S3"
+    },
+    {
+      "pergunta": "Uma empresa fornece um serviço de comércio eletrônico que armazena conteúdo no S3. A empresa deseja melhorar o desempenho do serviço da web globalmente. O que deve fazer?",
+      "opcoes": [
+        "Alterar a classe de armazenamento S3 para S3 Intelligent-Tiering.",
+        "Implementar uma distribuição Amazon CloudFront para armazenar em cache o conteúdo do servidor da web em locais de borda.",
+        "Utilizar o Amazon API Gateway para o serviço da web.",
+        "Migrar os servidores de comércio eletrônico do site para o Amazon EC2 com redes aprimoradas."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Implementar uma distribuição Amazon CloudFront para armazenar em cache o conteúdo do servidor da web em locais de borda."
+    },
+    {
+      "pergunta": "Uma empresa deseja um processo automatizado para escanear continuamente suas instâncias Amazon EC2 em busca de vulnerabilidades de software. Qual serviço da AWS atenderá?",
+      "opcoes": ["Amazon GuardDuty", "Amazon Inspector", "Amazon Detective", "Amazon Cognito"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Inspector"
+    },
+    {
+      "pergunta": "Uma empresa deseja minimizar a latência e realizar operações de computação para a aplicação o mais próximo possível dos usuários finais. Qual serviço ou componente fornecerá essa funcionalidade?",
+      "opcoes": ["Regiões da AWS", "Zones de Disponibilidade", "Locais de borda (Edge Locations)", "AWS Direct Connect"],
+      "tipo": "unica",
+      "respostaCorreta": "Locais de borda (Edge Locations)"
+    },
+    {
+      "pergunta": "Uma empresa deseja migrar seus bancos de dados relacionais locais para a AWS Cloud e quer usar infraestrutura o mais próxima possível de sua localização. Qual serviço deve usar para selecionar a área de implantação do Amazon RDS?",
+      "opcoes": ["Amazon Connect", "AWS Wavelength", "Regiões da AWS", "AWS Direct Connect"],
+      "tipo": "unica",
+      "respostaCorreta": "Regiões da AWS"
+    },
+    {
+      "pergunta": "Qual das seguintes é totalmente responsabilidade da AWS, de acordo com o modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Conscientização e treinamento em segurança",
+        "Desenvolvimento de uma política de senha do IAM",
+        "Atualização do sistema operacional convidado",
+        "Controles físicos e ambientais"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Controles físicos e ambientais"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é sempre fornecido gratuitamente?",
+      "opcoes": ["Amazon S3", "AWS Identity and Access Management (IAM)", "Elastic Load Balancers", "AWS WAF"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Identity and Access Management (IAM)"
+    },
+    {
+      "pergunta": "Qual serviço da AWS oferece proteção contra ataques DDoS para aplicativos que são executados na AWS Cloud?",
+      "opcoes": ["Amazon VPC", "AWS Shield", "AWS Audit Manager", "AWS Config"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Shield"
+    },
+    {
+      "pergunta": "Quais cenários representam o conceito de elasticidade na AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Escalonar o número de instâncias do Amazon EC2 com base no tráfego",
+        "Redimensionar instâncias do Amazon RDS conforme as necessidades comerciais mudam",
+        "Direcionar automaticamente o tráfego para instâncias do Amazon EC2 menos utilizadas",
+        "Utilizar documentos de conformidade da AWS para acelerar o processo de conformidade",
+        "Ter a capacidade de criar e gerenciar ambientes usando código"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Escalonar o número de instâncias do Amazon EC2 com base no tráfego", "Redimensionar instâncias do Amazon RDS conforme as necessidades comerciais mudam"]
+    },
+    {
+      "pergunta": "Amazon Elastic File System (Amazon EFS) e Amazon FSx oferecem qual tipo de armazenamento?",
+      "opcoes": ["Armazenamento de arquivos", "Armazenamento de objetos", "Armazenamento de bloco", "Armazenamento da instância"],
+      "tipo": "unica",
+      "respostaCorreta": "Armazenamento de arquivos"
+    },
+    {
+      "pergunta": "Uma aplicação web no EC2 precisa de alta disponibilidade. Quais serviços e recursos melhorarão a disponibilidade e reduzirão o impacto de falhas? (Selecione DUAS.)",
+      "opcoes": [
+        "Amazon EC2 Auto Scaling para as instâncias EC2",
+        "ACLs de sub-rede VPC para verificar a integridade de um serviço",
+        "Recursos distribuídos em várias Zonas de Disponibilidade (Availability Zones)",
+        "Configuração do AWS Server Migration Service (AWS SMS) para mover as instâncias EC2",
+        "Recursos distribuídos em vários pontos de presença AWS"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Amazon EC2 Auto Scaling para as instâncias EC2", "Recursos distribuídos em várias Zonas de Disponibilidade (Availability Zones)"]
+    },
+    {
+      "pergunta": "Organização com 3 contas. Conta X: 7 RIs, 5 instâncias. Conta Y: 0 RIs, 2 instâncias. Conta Z: 0 RIs, 4 instâncias. Como será a cobrança?",
+      "opcoes": [
+        "As onze instâncias serão cobradas como instâncias regulares.",
+        "Sete instâncias serão cobradas como RIs, e quatro serão cobradas como instâncias regulares.",
+        "Cinco instâncias serão cobradas como RIs, e seis serão cobradas como instâncias regulares.",
+        "Seis instâncias serão cobradas como RIs, e cinco serão cobradas como instâncias regulares."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Sete instâncias serão cobradas como RIs, e quatro serão cobradas como instâncias regulares."
+    },
+    {
+      "pergunta": "O que um usuário pode realizar usando o AWS CloudTrail?",
+      "opcoes": [
+        "Gerar um relatório de credenciais do usuário IAM.",
+        "Registrar chamadas de API feitas aos serviços da AWS.",
+        "Avaliar a conformidade das configurações de recursos da AWS com políticas e diretrizes.",
+        "Garantir que as instâncias do Amazon EC2 estejam atualizadas com as últimas atualizações de segurança."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Registrar chamadas de API feitas aos serviços da AWS."
+    },
+    {
+      "pergunta": "Qual pilar do AWS Well-Architected Framework se concentra no retorno sobre o investimento ao migrar para a AWS Cloud?",
+      "opcoes": ["Sustentabilidade", "Otimização de custos", "Excelência operacional", "Confiabilidade"],
+      "tipo": "unica",
+      "respostaCorreta": "Otimização de custos"
+    },
+    {
+      "pergunta": "Qual mecanismo permite que os desenvolvedores acessem os serviços da AWS a partir do código da aplicação?",
+      "opcoes": ["AWS Software Development Kit", "AWS Management Console", "AWS CodePipeline", "AWS Config"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Software Development Kit"
+    },
+    {
+      "pergunta": "Uma empresa implantou uma instância Amazon EC2. Qual opção é uma responsabilidade da AWS no modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Gerenciamento e criptografia de dados de aplicativos",
+        "Instalação de atualizações e patches de segurança do sistema operacional convidado",
+        "Configuração de dispositivos de infraestrutura",
+        "Configuração de grupos de segurança em cada instância"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Configuração de dispositivos de infraestrutura"
+    },
+    {
+      "pergunta": "Quais tarefas são de responsabilidade da AWS, de acordo com o modelo de responsabilidade compartilhada da AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Aplicar patches em dispositivos de rede AWS.",
+        "Definir regras de senha do usuário.",
+        "Fornecer segurança física para recursos de computação.",
+        "Configurar grupos de segurança.",
+        "Aplicar patches no sistema operacional de uma instância Amazon EC2."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Aplicar patches em dispositivos de rede AWS.", "Fornecer segurança física para recursos de computação."]
+    },
+    {
+      "pergunta": "Uma empresa utiliza o Amazon Aurora e deseja criptografar seus bancos de dados e backups. Quem gerencia a criptografia dos clusters e snapshots, de acordo com o modelo de responsabilidade compartilhada?",
+      "opcoes": ["AWS", "A empresa", "Parceiros da AWS Marketplace", "Parceiros de terceiros"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS"
+    },
+    {
+      "pergunta": "Qual atividade as empresas podem realizar usando a AWS Organizations?",
+      "opcoes": [
+        "Solucionar problemas de desempenho de aplicativos.",
+        "Gerenciar políticas de controle de serviço (SCPs).",
+        "Migrar aplicativos para microserviços.",
+        "Monitorar o desempenho de aplicativos."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Gerenciar políticas de controle de serviço (SCPs)."
+    },
+    {
+      "pergunta": "Um site em um Application Load Balancer precisa de proteção contra ataques de injeção de SQL. Qual serviço pode ser usado para criar uma regra personalizada que bloqueia esses ataques?",
+      "opcoes": ["Security groups", "AWS WAF", "Network ACLs", "AWS Shield"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS WAF"
+    },
+    {
+      "pergunta": "Quais são as responsabilidades do cliente de acordo com o modelo de responsabilidade compartilhada da AWS? (Selecione DUAS.)",
+      "opcoes": [
+        "Determinar as dependências do aplicativo com os sistemas operacionais.",
+        "Fornecer acesso do usuário com o AWS Identity and Access Management (IAM).",
+        "Garantir a segurança do data center em uma Zona de Disponibilidade.",
+        "Aplicar patches no hipervisor.",
+        "Garantir a disponibilidade de rede em Zonas de Disponibilidade."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Determinar as dependências do aplicativo com os sistemas operacionais.", "Fornecer acesso do usuário com o AWS Identity and Access Management (IAM)."]
+    },
+    {
+      "pergunta": "Uma empresa possui um grande número de instâncias do Amazon EC2 com Linux que precisam de acesso a um conjunto comum de arquivos. Qual serviço a empresa deve usar?",
+      "opcoes": ["AWS Backup", "Amazon Elastic File System (Amazon EFS)", "Amazon Elastic Block Store (Amazon EBS)", "AWS Snowball Edge Storage Optimized"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Elastic File System (Amazon EFS)"
+    },
+    {
+      "pergunta": "Uma aplicação com requisitos robustos de hardware deve ser acessada por estudantes com laptops leves. Qual serviço ajudará a implantar a aplicação sem investir em hardware de cliente de ponta?",
+      "opcoes": ["Amazon AppStream 2.0", "AWS AppSync", "Amazon WorkLink", "AWS Elastic Beanstalk"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon AppStream 2.0"
+    },
+    {
+      "pergunta": "Uma empresa precisa de ajuda para gerenciar várias contas vinculadas da AWS. Qual plano de suporte da AWS inclui um concierge?",
+      "opcoes": ["AWS Developer Support", "AWS Enterprise Support", "AWS Business Support", "AWS Basic Support"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Enterprise Support"
+    },
+    {
+      "pergunta": "Uma empresa deseja migrar seu banco de dados para um serviço gerenciado da AWS compatível com o PostgreSQL. Quais serviços da AWS atenderão? (Selecione DUAS.)",
+      "opcoes": ["Amazon Athena", "Amazon RDS", "Amazon EC2", "Amazon DynamoDB", "Amazon Aurora"],
+      "tipo": "multipla",
+      "respostaCorreta": ["Amazon RDS", "Amazon Aurora"]
+    },
+    {
+      "pergunta": "Uma empresa deseja estabelecer uma conexão de rede privada entre a AWS e sua rede corporativa. Qual serviço ou recurso da AWS atenderá a esse requisito?",
+      "opcoes": ["Amazon Connect", "Amazon Route 53", "AWS Direct Connect", "VPC peering"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Direct Connect"
+    },
+    {
+      "pergunta": "Quais capacidades estão na perspectiva da plataforma do AWS Cloud Adoption Framework (AWS CAF)? (Selecione DUAS.)",
+      "opcoes": [
+        "Gerenciamento de desempenho e capacidade",
+        "Engenharia de dados",
+        "Integração contínua e entrega contínua (CI/CD)",
+        "Proteção de infraestrutura",
+        "Gerenciamento de mudanças e lançamentos"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Engenharia de dados", "Integração contínua e entrega contínua (CI/CD)"]
+    },
+    {
+      "pergunta": "Quando um usuário deseja utilizar suas licenças de software existentes por soquete, por núcleo ou por VM para um servidor Microsoft Windows, qual tipo de instância EC2 é necessário?",
+      "opcoes": ["Spot Instances", "Dedicated Instances", "Dedicated Hosts", "Reserved Instances"],
+      "tipo": "unica",
+      "respostaCorreta": "Dedicated Hosts"
+    },
+    {
+      "pergunta": "Qual conceito de nuvem é demonstrado pelo uso do AWS Compute Optimizer?",
+      "opcoes": ["Validação de Segurança", "Dimensionamento Adequado", "Elasticidade", "Alcance Global"],
+      "tipo": "unica",
+      "respostaCorreta": "Dimensionamento Adequado"
+    },
+    {
+      "pergunta": "Uma empresa tem servidores na us-east-1 e está considerando a implantação de servidores adicionais em uma região diferente. Qual ferramenta da AWS deve usar para encontrar informações de preços?",
+      "opcoes": ["Cost Explorer", "AWS Budgets", "AWS Purchase Order Management", "AWS Pricing Calculator"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Pricing Calculator"
+    },
+    {
+      "pergunta": "Uma empresa deseja migrar para a AWS e usar o mesmo software de segurança que utiliza localmente. Onde a empresa pode adquirir a solução (oferecida como SaaS)?",
+      "opcoes": ["AWS Partner Solutions Finder", "AWS Support Center", "AWS Management Console", "AWS Marketplace"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Marketplace"
+    },
+    {
+      "pergunta": "Uma empresa deseja rastrear os custos dos serviços e receber notificações quando os custos estiverem previstos para atingir um nível específico. Qual serviço fornece essa funcionalidade?",
+      "opcoes": ["AWS Budgets", "AWS Cost Explorer", "Savings Plans", "AWS Billing Conductor"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Budgets"
+    },
+    {
+      "pergunta": "Qual tarefa uma empresa pode realizar usando grupos de segurança na AWS Cloud?",
+      "opcoes": [
+        "Permitir acesso a uma instância Amazon EC2 apenas por uma porta específica.",
+        "Negar acesso a endereços IP maliciosos em nível de sub-rede.",
+        "Proteger dados em cache pelo Amazon CloudFront.",
+        "Aplicar um firewall sem estado a uma instância Amazon EC2."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Permitir acesso a uma instância Amazon EC2 apenas por uma porta específica."
+    },
+    {
+      "pergunta": "Qual pilar do AWS Well-Architected Framework inclui um princípio de design sobre a medição da eficiência geral das cargas de trabalho em termos de valor comercial?",
+      "opcoes": ["Excelência operacional", "Segurança", "Confiabilidade", "Otimização de custos"],
+      "tipo": "unica",
+      "respostaCorreta": "Excelência operacional"
+    },
+    {
+      "pergunta": "Uma empresa precisa executar código em resposta a uma notificação de evento que ocorre quando objetos são carregados em um bucket do Amazon S3. Qual serviço se integrará diretamente?",
+      "opcoes": ["AWS Lambda", "Amazon EC2", "Amazon Elastic Container Registry (Amazon ECR)", "AWS Elastic Beanstalk"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Lambda"
+    },
+    {
+      "pergunta": "Uma empresa precisa de um serviço automatizado de gerenciamento de vulnerabilidades que faça varreduras contínuas nas cargas de trabalho da AWS. Qual serviço atenderá?",
+      "opcoes": ["Amazon GuardDuty", "Amazon Inspector", "AWS Security Hub", "AWS Shield"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Inspector"
+    },
+    {
+      "pergunta": "Organização com 2 contas. Conta A: 5 RIs, 4 instâncias. Conta B: 0 RIs, 4 instâncias. Como será a cobrança das oito instâncias?",
+      "opcoes": [
+        "As oito instâncias serão cobradas como instâncias regulares.",
+        "Quatro instâncias serão cobradas como RIs, e quatro serão cobradas como instâncias regulares.",
+        "Cinco instâncias serão cobradas como RIs, e três serão cobradas como instâncias regulares.",
+        "As oito instâncias serão cobradas como RIs."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Cinco instâncias serão cobradas como RIs, e três serão cobradas como instâncias regulares."
+    },
+    {
+      "pergunta": "Uma empresa possui uma única instância Amazon EC2. A empresa deseja adotar uma arquitetura altamente disponível. O que a empresa pode fazer?",
+      "opcoes": [
+        "Escalar verticalmente para um tamanho de instância EC2 maior.",
+        "Escalar horizontalmente em várias Zonas de Disponibilidade.",
+        "Comprar uma Instância Dedicada EC2.",
+        "Alterar a família de instâncias EC2 para uma instância otimizada para computação."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Escalar horizontalmente em várias Zonas de Disponibilidade."
+    },
+    {
+      "pergunta": "Uma empresa precisa migrar todas as suas equipes de desenvolvimento para um ambiente de desenvolvimento integrado (IDE) baseado em nuvem. Qual serviço da AWS a empresa deve usar?",
+      "opcoes": ["AWS CodeBuild", "AWS Cloud9", "AWS OpsWorks", "AWS Cloud Development Kit (AWS CDK)"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Cloud9"
+    },
+    {
+      "pergunta": "Uma empresa está migrando uma aplicação monolítica local para microsserviços na AWS. Qual é a melhor prática do AWS Well-Architected Framework que a empresa está seguindo?",
+      "opcoes": [
+        "Integrar testes funcionais como parte da implantação na AWS.",
+        "Usar automação para implantar alterações.",
+        "Implantar a aplicação em várias localidades.",
+        "Implementar dependências fracamente acopladas."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Implementar dependências fracamente acopladas."
+    },
+    {
+      "pergunta": "Qual opção é uma perspectiva que inclui as capacidades fundamentais do AWS Cloud Adoption Framework (AWS CAF)?",
+      "opcoes": ["Sustentabilidade", "Segurança", "Eficiência de desempenho", "Confiabilidade"],
+      "tipo": "unica",
+      "respostaCorreta": "Segurança"
+    },
+    {
+      "pergunta": "Um engenheiro de TI precisa acessar os serviços da AWS a partir de um aplicativo local. Quais credenciais ou chaves o aplicativo precisa para autenticação?",
+      "opcoes": [
+        "Nome de usuário e senha da conta da AWS",
+        "Chave de acesso e segredo do IAM",
+        "Pares de chaves do Amazon EC2",
+        "Chaves do AWS Key Management Service (AWS KMS)"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Chave de acesso e segredo do IAM"
+    },
+    {
+      "pergunta": "Uma empresa com conectividade à internet limitada precisa realizar processamento de dados localmente. A solução deve operar sem uma conexão estável. Qual serviço atenderá?",
+      "opcoes": ["Amazon S3", "AWS Snowball Edge", "AWS Storage Gateway", "AWS Backup"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Snowball Edge"
+    },
+    {
+      "pergunta": "Uma empresa deseja implementar rapidamente um pipeline de integração contínua/desdobramento contínuo (CI/CD). Qual serviço da AWS atenderá a esse requisito?",
+      "opcoes": ["AWS Config", "Amazon Cognito", "AWS DataSync", "AWS CodeStar"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CodeStar"
+    },
+    {
+      "pergunta": "Uma empresa precisa de um serviço de consulta interativa sem servidor para analisar dados no Amazon S3 usando SQL padrão, minimizando custos e maximizando flexibilidade. Qual serviço atende?",
+      "opcoes": ["Amazon Redshift", "AWS Glue", "Amazon Athena", "Amazon Kinesis Data Streams"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Athena"
+    },
+    {
+      "pergunta": "O que significa 'segurança DA nuvem' (security OF the cloud) no modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Disponibilidade de serviços da AWS, como o Amazon EC2.",
+        "Segurança da infraestrutura de nuvem que executa todos os serviços da AWS.",
+        "Implementação de políticas de senha para usuários IAM.",
+        "Segurança dos ambientes dos clientes por meio de parceiros do AWS Network Firewall."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Segurança da infraestrutura de nuvem que executa todos os serviços da AWS."
+    },
+    {
+      "pergunta": "Uma empresa está construindo um aplicativo que receberá milhões de consultas de banco de dados a cada segundo. A empresa precisa que o armazenamento de dados seja escalável. Qual serviço atenderá?",
+      "opcoes": ["Amazon DynamoDB", "AWS Cloud9", "Amazon ElastiCache para Memcached", "Amazon Neptune"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon DynamoDB"
+    }
+  ]
+  ,
+  "simulado_3": [
+    {
+      "pergunta": "Qual componente do VPC fornece uma camada de segurança no nível de sub-rede?",
+      "opcoes": ["Grupos de Segurança (Security Groups)", "Listas de Controle de Acesso à Rede (Network ACLs)", "NAT Gateways", "Tabelas de Roteamento (Route Tables)"],
+      "tipo": "unica",
+      "respostaCorreta": "Listas de Controle de Acesso à Rede (Network ACLs)"
+    },
+    {
+      "pergunta": "Qual das seguintes é uma proposta de valor da AWS que descreve a capacidade do usuário de dimensionar a infraestrutura com base na demanda?",
+      "opcoes": ["Velocidade de inovação", "Elasticidade de recursos", "Arquitetura desacoplada", "Implantação global"],
+      "tipo": "unica",
+      "respostaCorreta": "Elasticidade de recursos"
+    },
+    {
+      "pergunta": "Uma empresa precisa identificar a última vez que um usuário específico acessou o Console de Gerenciamento da AWS. Qual serviço da AWS fornecerá essa informação?",
+      "opcoes": ["Amazon Cognito", "AWS CloudTrail", "Amazon Inspector", "Amazon GuardDuty"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "Uma empresa deseja migrar seu banco de dados Microsoft SQL Server local para a AWS. Qual serviço a empresa deve usar para reduzir a sobrecarga de gerenciamento?",
+      "opcoes": ["Amazon Elastic Container Service (Amazon ECS)", "Amazon SageMaker", "Amazon RDS", "Amazon Athena"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon RDS"
+    },
+    {
+      "pergunta": "Uma empresa possui um banco de dados MySQL em uma única instância EC2 e necessita de maior disponibilidade em caso de interrupção. Qual conjunto de tarefas atenderia a esse requisito?",
+      "opcoes": [
+        "Adicionar um Application Load Balancer na frente da instância EC2.",
+        "Configurar o EC2 Auto Recovery para mover a instância para outra Zona de Disponibilidade.",
+        "Migrar para o Amazon RDS e habilitar o Multi-AZ.",
+        "Habilitar a proteção contra término para a instância EC2."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Migrar para o Amazon RDS e habilitar o Multi-AZ."
+    },
+    {
+      "pergunta": "Uma empresa precisa executar cargas de trabalho localmente para cumprir diretrizes regulatórias, mas usar a AWS para outras. Ela quer usar as mesmas chamadas de API para ambas. Qual serviço deve usar?",
+      "opcoes": ["Dedicated Hosts", "AWS Outposts", "Availability Zones", "AWS Wavelength"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Outposts"
+    },
+    {
+      "pergunta": "Qual plano de suporte da AWS fornece aos clientes acesso a um gerente de conta técnica (TAM) da AWS?",
+      "opcoes": ["AWS Basic Support", "AWS Developer Support", "AWS Business Support", "AWS Enterprise Support"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Enterprise Support"
+    },
+    {
+      "pergunta": "Qual serviço ou ferramenta da AWS o AWS Control Tower usa para criar recursos?",
+      "opcoes": ["AWS CloudFormation", "AWS Trusted Advisor", "AWS Directory Service", "AWS Cost Explorer"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudFormation"
+    },
+    {
+      "pergunta": "Qual serviço ou recurso da AWS oferece aos usuários a capacidade de capturar informações sobre o tráfego de rede em uma VPC?",
+      "opcoes": ["VPC Flow Logs", "Amazon Inspector", "Tabelas de roteamento da VPC", "AWS CloudTrail"],
+      "tipo": "unica",
+      "respostaCorreta": "VPC Flow Logs"
+    },
+    {
+      "pergunta": "Qual serviço ou recurso da AWS permite que os usuários criptografem dados em repouso no Amazon S3?",
+      "opcoes": ["Políticas IAM", "Criptografia do lado do servidor", "Amazon GuardDuty", "Criptografia do lado do cliente"],
+      "tipo": "unica",
+      "respostaCorreta": "Criptografia do lado do servidor"
+    },
+    {
+      "pergunta": "Quais benefícios os clientes podem obter ao usar o AWS Marketplace? (Selecione DOIS.)",
+      "opcoes": [
+        "Velocidade nos negócios",
+        "Menos objeções legais",
+        "Disponibilidade exclusiva de produtos open source",
+        "Sem necessidade de licenças de produtos para nenhum produto",
+        "Uso gratuito de todos os serviços na primeira hora"
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Velocidade nos negócios", "Menos objeções legais"]
+    },
+    {
+      "pergunta": "Uma empresa está planejando hospedar suas cargas de trabalho na AWS. Qual serviço da AWS requer que a empresa atualize e aplique patches no sistema operacional convidado?",
+      "opcoes": ["Amazon DynamoDB", "Amazon S3", "Amazon EC2", "Amazon Aurora"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EC2"
+    },
+    {
+      "pergunta": "Uma empresa está configurando o IAM. Qual recomendação está de acordo com as melhores práticas de segurança do IAM?",
+      "opcoes": [
+        "Utilizar as chaves de acesso do usuário root da conta para tarefas administrativas.",
+        "Conceder permissões amplas para que todos os funcionários possam acessar os recursos.",
+        "Ativar autenticação de dois fatores (MFA) para maior segurança durante o processo de login.",
+        "Evitar a rotação de credenciais para evitar problemas em aplicações de produção."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Ativar autenticação de dois fatores (MFA) para maior segurança durante o processo de login."
+    },
+    {
+      "pergunta": "Qual tarefa um usuário deve realizar usando as credenciais da conta raiz da AWS?",
+      "opcoes": [
+        "Realizar alterações nos recursos de produção da AWS.",
+        "Alterar planos de suporte da AWS.",
+        "Acessar relatórios de custo e uso da AWS.",
+        "Conceder acesso de auditoria a uma conta da AWS para uma auditoria de conformidade."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Alterar planos de suporte da AWS."
+    },
+    {
+      "pergunta": "Qual tarefa é de responsabilidade do cliente, de acordo com o modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Gerenciamento dos sistemas operacionais convidados.",
+        "Manutenção da configuração de dispositivos de infraestrutura.",
+        "Gerenciamento dos sistemas operacionais host e virtualização.",
+        "Manutenção do software que alimenta as Zones de Disponibilidade."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Gerenciamento dos sistemas operacionais convidados."
+    },
+    {
+      "pergunta": "Uma empresa está procurando um serviço gerenciado de ML que possa recomendar produtos com base nos comportamentos anteriores de um cliente. Qual serviço atende?",
+      "opcoes": ["Amazon Personalize", "Amazon SageMaker", "Amazon Pinpoint", "Amazon Comprehend"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Personalize"
+    },
+    {
+      "pergunta": "Um usuário possui uma carga de trabalho com estado que será executada no Amazon EC2 pelos próximos 3 anos. Qual é o modelo de precificação MAIS econômico?",
+      "opcoes": ["Instâncias Sob Demanda (On-Demand Instances)", "Instâncias Reservadas (Reserved Instances)", "Instâncias Dedicadas (Dedicated Instances)", "Instâncias Spot (Spot Instances)"],
+      "tipo": "unica",
+      "respostaCorreta": "Instâncias Reservadas (Reserved Instances)"
+    },
+    {
+      "pergunta": "Um usuário deseja identificar qualquer grupo de segurança que permita tráfego SSH de entrada irrestrito. Qual serviço pode ser usado para alcançar esse objetivo?",
+      "opcoes": ["Amazon Cognito", "AWS Shield", "Amazon Macie", "AWS Trusted Advisor"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Trusted Advisor"
+    },
+    {
+      "pergunta": "Uma empresa precisa armazenar com segurança credenciais (senhas) que uma aplicação usa para conectar a um banco de dados. Qual serviço atende com MÍNIMO de sobrecarga operacional?",
+      "opcoes": ["AWS Key Management Service (AWS KMS)", "AWS Config", "AWS Secrets Manager", "Amazon GuardDuty"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Secrets Manager"
+    },
+    {
+      "pergunta": "Uma empresa deseja utilizar a AWS Cloud como um local de backup externo para sua infraestrutura local. Qual serviço atenderá a esse requisito de forma MAIS econômica?",
+      "opcoes": ["Amazon S3", "Amazon Elastic File System (Amazon EFS)", "Amazon FSx", "Amazon Elastic Block Store (Amazon EBS)"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon S3"
+    },
+    {
+      "pergunta": "Qual serviço da AWS exige que o cliente atualize o sistema operacional convidado?",
+      "opcoes": ["AWS Lambda", "Amazon OpenSearch Service", "Amazon EC2", "Amazon ElastiCache"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EC2"
+    },
+    {
+      "pergunta": "Uma empresa deseja proteger suas informações e ativos na AWS enquanto realiza avaliação e mitigação de riscos. Qual pilar do AWS Well-Architected Framework é apoiado por esses objetivos?",
+      "opcoes": ["Confiabilidade", "Segurança", "Excelência operacional", "Eficiência de desempenho"],
+      "tipo": "unica",
+      "respostaCorreta": "Segurança"
+    },
+    {
+      "pergunta": "Qual solução da AWS oferece a capacidade para uma empresa executar serviços da AWS no data center local da empresa?",
+      "opcoes": ["AWS Direct Connect", "AWS Outposts", "Ativações híbridas do AWS Systems Manager", "AWS Storage Gateway"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Outposts"
+    },
+    {
+      "pergunta": "Uma empresa planeja migrar para a AWS e deseja usar o AWS CAF para definir e acompanhar os resultados comerciais. Qual capacidade da perspectiva de governança atenderá a esses requisitos?",
+      "opcoes": ["Gerenciamento de benefícios", "Gerenciamento de riscos", "Gerenciamento do portfólio de aplicativos", "Gerenciamento financeiro na nuvem"],
+      "tipo": "unica",
+      "respostaCorreta": "Gerenciamento de benefícios"
+    },
+    {
+      "pergunta": "Qual benefício está incluído em um plano de suporte Enterprise da AWS?",
+      "opcoes": [
+        "Suporte à AWS Partner Network (APN) sem custo adicional",
+        "Suporte designado de um gerente de contas técnico (TAM) da AWS",
+        "Suporte no local de engenheiros da AWS",
+        "Conformidade gerenciada pela AWS como código com o AWS Config"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Suporte designado de um gerente de contas técnico (TAM) da AWS"
+    },
+    {
+      "pergunta": "Uma empresa precisa de um serviço de banco de dados de grafo que seja escalável e altamente disponível. Qual serviço da AWS atende a esses requisitos?",
+      "opcoes": ["Amazon Aurora", "Amazon Redshift", "Amazon DynamoDB", "Amazon Neptune"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Neptune"
+    },
+    {
+      "pergunta": "Qual serviço ou recurso da AWS oferece proteção contra ataques HTTP para usuários que executam aplicativos web de frente para o público?",
+      "opcoes": ["Grupos de Segurança (Security groups)", "Listas de Controle de Acesso à Rede (Network ACLs)", "AWS Shield Standard", "AWS WAF"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS WAF"
+    },
+    {
+      "pergunta": "Quais afirmações representam a eficiência de custos da AWS Cloud? (Selecione DUAS.)",
+      "opcoes": [
+        "Os usuários podem trocar despesas fixas por despesas variáveis.",
+        "Os usuários podem implantar em todo o mundo em minutos.",
+        "A AWS oferece aumento de velocidade e agilidade.",
+        "A AWS é responsável pela atualização da infraestrutura.",
+        "Os usuários se beneficiam de economias de escala."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Os usuários podem trocar despesas fixas por despesas variáveis.", "Os usuários se beneficiam de economias de escala."]
+    },
+    {
+      "pergunta": "Uma empresa deseja usar um serviço gerenciado para simplificar a configuração, operação e escalabilidade de seu banco de dados MySQL na AWS Cloud. Qual serviço atenderá?",
+      "opcoes": ["Amazon EMR", "Amazon RDS", "Amazon Redshift", "Amazon DynamoDB"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon RDS"
+    },
+    {
+      "pergunta": "Uma empresa deseja coletar e processar 10 TB de dados localmente e transferir para a AWS, mas possui conectividade intermitente. Qual serviço atenderá?",
+      "opcoes": ["AWS Database Migration Service (AWS DMS)", "AWS DataSync", "AWS Backup", "AWS Snowball Edge"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Snowball Edge"
+    },
+    {
+      "pergunta": "Uma empresa quer otimizar os custos de computação a longo prazo para funções AWS Lambda e instâncias Amazon EC2. Qual opção de compra a empresa deve escolher?",
+      "opcoes": ["Dedicated Hosts", "Compute Savings Plans", "Reserved Instances", "Spot Instances"],
+      "tipo": "unica",
+      "respostaCorreta": "Compute Savings Plans"
+    },
+    {
+      "pergunta": "Qual opção é o modelo de preços padrão para instâncias do Amazon EC2?",
+      "opcoes": ["Instâncias Sob Demanda (On-Demand Instances)", "Savings Plans", "Instâncias Spot (Spot Instances)", "Reserved Instances"],
+      "tipo": "unica",
+      "respostaCorreta": "Instâncias Sob Demanda (On-Demand Instances)"
+    },
+    {
+      "pergunta": "Um novo usuário da AWS quer aprender como implementar serviços a partir de exemplos e fazer perguntas a especialistas. Qual serviço ou recurso atenderá?",
+      "opcoes": ["AWS Online Tech Talks", "Documentação da AWS", "AWS Marketplace", "Painel de Saúde da AWS (AWS Health Dashboard)"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Online Tech Talks"
+    },
+    {
+      "pergunta": "Qual plano de suporte da AWS é o mínimo recomendado para usuários que têm cargas de trabalho de produção na AWS?",
+      "opcoes": ["Suporte AWS para Desenvolvedores", "Suporte Empresarial AWS (Enterprise)", "Suporte Empresarial AWS (Business)", "Suporte de Introdução Empresarial AWS"],
+      "tipo": "unica",
+      "respostaCorreta": "Suporte Empresarial AWS (Business)"
+    },
+    {
+      "pergunta": "Qual serviço ou recurso da AWS pode ser usado para controlar o tráfego de entrada e saída em UMA instância do Amazon EC2?",
+      "opcoes": ["Internet gateways", "AWS Identity and Access Management (IAM)", "Listas de Controle de Acesso à Rede (Network ACLs)", "Grupos de Segurança (Security groups)"],
+      "tipo": "unica",
+      "respostaCorreta": "Grupos de Segurança (Security groups)"
+    },
+    {
+      "pergunta": "Qual tipo de armazenamento da AWS é efêmero e é excluído quando uma instância do Amazon EC2 é parada ou encerrada?",
+      "opcoes": ["Amazon Elastic Block Store (Amazon EBS)", "Armazenamento de instância do Amazon EC2 (Amazon EC2 instance store)", "Amazon Elastic File System (Amazon EFS)", "Amazon S3"],
+      "tipo": "unica",
+      "respostaCorreta": "Armazenamento de instância do Amazon EC2 (Amazon EC2 instance store)"
+    },
+    {
+      "pergunta": "Qual benefício está incluído em um plano de suporte Enterprise da AWS?",
+      "opcoes": [
+        "Suporte à AWS Partner Network (APN) sem custo adicional",
+        "Suporte designado de um gerente de contas técnico (TAM) da AWS",
+        "Suporte no local de engenheiros da AWS",
+        "Conformidade gerenciada pela AWS como código com o AWS Config"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Suporte designado de um gerente de contas técnico (TAM) da AWS"
+    },
+    {
+      "pergunta": "Uma empresa migrou para a AWS e deseja operar de maneira mais eficiente e segura. Qual serviço a empresa deve utilizar para suporte operacional (gerenciamento contínuo)?",
+      "opcoes": ["AWS Support", "AWS Cloud Adoption Framework (AWS CAF)", "AWS Managed Services (AMS)", "AWS Well-Architected Framework"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Managed Services (AMS)"
+    },
+    {
+      "pergunta": "Uma aplicação é executada por algumas horas na maioria dos dias, mas 8h/dia por uma semana no final do mês. Qual serviço ou recurso deve ser usado para hospedar na AWS?",
+      "opcoes": ["Amazon EC2 Standard Reserved Instances", "Amazon EC2 On-Demand Instances", "AWS Wavelength", "Application Load Balancer"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EC2 On-Demand Instances"
+    },
+    {
+      "pergunta": "Uma empresa deseja que usuários façam perguntas em linguagem natural (NLP) sobre dados corporativos e recebam respostas em gráficos/visualizações. Qual serviço é mais adequado?",
+      "opcoes": ["Amazon Kendra", "Amazon Comprehend", "Amazon QuickSight Q", "Amazon Bedrock"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon QuickSight Q"
+    },
+    {
+      "pergunta": "Uma empresa deseja migrar uma aplicação monolítica para microsserviços. Qual combinação de serviços pode ser usada? (Selecione DOIS.)",
+      "opcoes": ["Amazon Simple Queue Service (Amazon SQS)", "AWS Lambda", "AWS Migration Hub", "AWS AppSync", "AWS Application Migration Service"],
+      "tipo": "multipla",
+      "respostaCorreta": ["Amazon Simple Queue Service (Amazon SQS)", "AWS Lambda"]
+    },
+    {
+      "pergunta": "Qual tarefa de manutenção é de responsabilidade do cliente, de acordo com o modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Conectividade física entre Zonas de Disponibilidade",
+        "Manutenção de switches de rede",
+        "Atualizações de hardware e patches de firmware",
+        "Atualizações e patches de segurança do Amazon EC2"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Atualizações e patches de segurança do Amazon EC2"
+    },
+    {
+      "pergunta": "Uma empresa quer garantir que duas instâncias EC2 estejam em data centers separados, com latência de comunicação mínima entre eles. Como atender a esse requisito?",
+      "opcoes": [
+        "Colocar as instâncias em duas Regiões AWS separadas conectadas por VPC peering.",
+        "Colocar as instâncias em duas Zonas de Disponibilidade separadas dentro da mesma Região AWS.",
+        "Colocar uma instância no local e a outra em uma Região AWS, conectadas por VPN.",
+        "Colocar ambas as instâncias em um grupo de colocação para largura de banda dedicada."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Colocar as instâncias em duas Zonas de Disponibilidade separadas dentro da mesma Região AWS."
+    },
+    {
+      "pergunta": "Uma empresa está lançando um aplicativo móvel e deseja que os clientes possam usá-lo sem atualizar seus dispositivos móveis. Qual pilar do AWS Well-Architected Framework essa meta representa?",
+      "opcoes": ["Segurança", "Confiabilidade", "Otimização de custos", "Sustentabilidade"],
+      "tipo": "unica",
+      "respostaCorreta": "Confiabilidade"
+    },
+    {
+      "pergunta": "Quais dos seguintes são princípios gerais de design do AWS Well-Architected Framework? (Selecione DOIS)",
+      "opcoes": [
+        "Consolidar componentes-chave em arquiteturas monolíticas.",
+        "Testar sistemas em escala de produção.",
+        "Provisionar mais capacidade do que uma carga de trabalho é esperada precisar.",
+        "Orientar o design da arquitetura com base em dados coletados.",
+        "Tornar as decisões arquiteturais estáticas, eventos únicos."
+      ],
+      "tipo": "multipla",
+      "respostaCorreta": ["Testar sistemas em escala de produção.", "Orientar o design da arquitetura com base em dados coletados."]
+    },
+    {
+      "pergunta": "Qual modelo de precificação de instância do Amazon EC2 pode fornecer descontos de até 90%?",
+      "opcoes": ["Reserved Instances", "On-Demand", "Dedicated Hosts", "Spot Instances"],
+      "tipo": "unica",
+      "respostaCorreta": "Spot Instances"
+    },
+    {
+      "pergunta": "Qual serviço ou ferramenta da AWS ajuda os usuários a visualizar, entender e gerenciar os gastos e o uso ao longo do tempo?",
+      "opcoes": ["AWS Organizations", "AWS Pricing Calculator", "AWS Cost Explorer", "AWS Service Catalog"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Cost Explorer"
+    },
+    {
+      "pergunta": "Qual serviço ou recurso da AWS a empresa pode usar para limitar o acesso aos serviços da AWS para contas de membros (em uma Organization)?",
+      "opcoes": ["AWS Identity and Access Management (IAM)", "Políticas de controle de serviço (SCPs)", "Unidades organizacionais (OUs)", "Listas de controle de acesso (ACLs)"],
+      "tipo": "unica",
+      "respostaCorreta": "Políticas de controle de serviço (SCPs)"
+    },
+    {
+      "pergunta": "Como um usuário da AWS pode conduzir avaliações de segurança de instâncias EC2, NAT gateways e ELBs de uma maneira aprovada pela AWS?",
+      "opcoes": ["Sobrecarregar um alvo com solicitações.", "Usar o Amazon Inspector.", "Realizar testes de penetração.", "Usar o AWS Service Health Dashboard."],
+      "tipo": "unica",
+      "respostaCorreta": "Usar o Amazon Inspector."
+    },
+    {
+      "pergunta": "Uma empresa deseja um banco de dados NoSQL de chave-valor que seja totalmente gerenciado e sem servidor. Qual serviço da AWS atenderá?",
+      "opcoes": ["Amazon DynamoDB", "Amazon RDS", "Amazon Aurora", "Amazon Memory DB for Redis"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon DynamoDB"
+    },
+    {
+      "pergunta": "Quais serviços ou recursos da AWS uma empresa pode usar para conectar a rede de seu data center local à AWS? (Selecione DOIS.)",
+      "opcoes": ["AWS VPN", "AWS Directory Service", "AWS Data Pipeline", "AWS Direct Connect", "AWS CloudHSM"],
+      "tipo": "multipla",
+      "respostaCorreta": ["AWS VPN", "AWS Direct Connect"]
+    },
+    {
+      "pergunta": "Qual serviço da AWS pode relatar como as configurações dos recursos da AWS mudaram ao longo do tempo?",
+      "opcoes": ["AWS CloudTrail", "Amazon CloudWatch", "AWS Config", "Amazon Inspector"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Config"
+    },
+    {
+      "pergunta": "Qual dos seguintes é um princípio de design do AWS Well-Architected Framework para excelência operacional na AWS Cloud?",
+      "opcoes": [
+        "Expanda globalmente em minutos",
+        "Realize alterações frequentes, pequenas e reversíveis",
+        "Implemente uma base sólida de gerenciamento de identidade e acesso",
+        "Pare de gastar dinheiro em infraestrutura de hardware para operações em data centers"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Realize alterações frequentes, pequenas e reversíveis"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é usado para fornecer temporariamente credenciais de segurança federadas a um usuário?",
+      "opcoes": ["Amazon GuardDuty", "AWS Simple Token Service (AWS STS)", "AWS Secrets Manager", "AWS Certificate Manager"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Simple Token Service (AWS STS)"
+    },
+    {
+      "pergunta": "Uma aplicação tem uso maior durante o dia do que à noite. A empresa quer otimizar o número de instâncias EC2 com base nesse padrão. Qual serviço deve usar?",
+      "opcoes": ["Spot Instances", "Reserved Instances", "AWS CloudFormation", "AWS Auto Scaling"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Auto Scaling"
+    },
+    {
+      "pergunta": "Uma função Lambda precisa ser invocada uma vez por dia em um horário específico. Qual serviço a empresa deve usar para atender a esse requisito?",
+      "opcoes": ["AWS Managed Services (AMS)", "AWS CodeStar", "Amazon EventBridge", "AWS Step Functions"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EventBridge"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é um serviço de armazenamento de dados em memória?",
+      "opcoes": ["Amazon Aurora", "Amazon RDS", "Amazon DynamoDB", "Amazon ElastiCache"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon ElastiCache"
+    },
+    {
+      "pergunta": "Qual serviço da AWS ajudará uma empresa a identificar o usuário que excluiu uma instância do Amazon EC2 ontem?",
+      "opcoes": ["Amazon CloudWatch", "AWS Trusted Advisor", "AWS CloudTrail", "Amazon Inspector"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "Uma empresa quer usar diretrizes do Well-Architected Framework para limitar erros humanos e facilitar respostas consistentes a eventos. Qual princípio de design atenderá?",
+      "opcoes": ["Use o AWS CodeDeploy.", "Execute operações como código.", "Migre cargas de trabalho para um Host Dedicado.", "Use o AWS Compute Optimizer."],
+      "tipo": "unica",
+      "respostaCorreta": "Execute operações como código."
+    },
+    {
+      "pergunta": "Qual é o plano de suporte da AWS menos caro que fornece o conjunto completo de verificações de práticas recomendadas do AWS Trusted Advisor para otimização de custos?",
+      "opcoes": ["AWS Enterprise Support", "AWS Business Support", "AWS Developer Support", "AWS Basic Support"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Business Support"
+    },
+    {
+      "pergunta": "Qual serviço da AWS oferece armazenamento de objetos?",
+      "opcoes": ["Amazon RDS", "Amazon Elastic File System (Amazon EFS)", "Amazon S3", "Amazon DynamoDB"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon S3"
+    },
+    {
+      "pergunta": "Uma empresa deseja armazenamento durável para conteúdo estático e uma infraestrutura de armazenamento de dados escalável de forma infinita a um custo mínimo. Qual serviço escolher?",
+      "opcoes": ["Amazon Elastic Block Store (Amazon EBS)", "Amazon S3", "AWS Storage Gateway", "Amazon Elastic File System (Amazon EFS)"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon S3"
+    }
+  ],
+  "simulado_4": [
+    {
+      "pergunta": "Ao arquitetar aplicativos em nuvem, qual dos itens a seguir é um princípio fundamental de design?",
+      "opcoes": [
+        "Provisão de capacidade para pico de carga",
+        "Utilizar a maior instância possível",
+        "Utilizar o processo de desenvolvimento scrum",
+        "Implementar elasticidade"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Implementar elasticidade"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços se enquadra como serviço serverless?",
+      "opcoes": ["EC2", "Lambda", "LightSail", "Workspace"],
+      "tipo": "unica",
+      "respostaCorreta": "Lambda"
+    },
+    {
+      "pergunta": "Uma empresa quer mover seus servidores locais para EC2. A empresa tem 50 unidades de negócios e deseja separar o faturamento de cada unidade. O que você recomendaria?",
+      "opcoes": [
+        "Coloque cada unidade de negócios em uma região diferente da AWS e filtrar por região no Cost Explorer.",
+        "Coloque cada unidade de negócios em uma zona de disponibilidade diferente da AWS e filtrar por zona de disponibilidade no Cost Explorer.",
+        "Adicione Tags das unidades em cada recurso que for criado na AWS e filtrar por Tag no Cost Explorer.",
+        "Utilize o AWS Organizations e diferentes contas da AWS."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Utilize o AWS Organizations e diferentes contas da AWS."
+    },
+    {
+      "pergunta": "Um desenvolvedor precisa usar um modelo padronizado para criar cópias de EC2 de uma arquitetura para ambientes de desenvolvimento, teste e produção. Qual serviço da AWS deve ser usado?",
+      "opcoes": ["AWS CloudFormation", "AWS CloudTrail", "Amazon CloudFront", "AWS Cloud9"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudFormation"
+    },
+    {
+      "pergunta": "Uma empresa precisa dar aos usuários a capacidade de fazer login no aplicativo por meio de provedores de identidade social. Qual serviço da AWS atenderá a esses requisitos?",
+      "opcoes": [
+        "AWS Directory Service",
+        "Amazon Cognito",
+        "AWS identity and Access management (IAM)",
+        "AWS Secrets Manager"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Cognito"
+    },
+    {
+      "pergunta": "Desenvolvedores querem implantar aplicativos sem precisar provisionar a infraestrutura por conta própria. Qual serviço da AWS os desenvolvedores devem usar para atender a esse requisito?",
+      "opcoes": ["AWS CloudFormation", "AWS CodeBuild", "AWS Elastic Beanstalk", "AWS CodeDeploy"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Elastic Beanstalk"
+    },
+    {
+      "pergunta": "Qual ação fornecerá documentação para ajudar uma empresa a avaliar se o uso da Nuvem AWS está em conformidade com os padrões regulatórios locais?",
+      "opcoes": [
+        "Rodando o Amazon GuardDuty",
+        "AWS Artifact",
+        "Documentações da AWS",
+        "Com logs do AWS Cloud Trail"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Artifact"
+    },
+    {
+      "pergunta": "Sua empresa precisa de desempenho estável e previsível de suas instâncias EC2 no menor custo possível e capacidade de dimensionar recursos. Qual serviço ou recurso da AWS atenderá?",
+      "opcoes": [
+        "Amazon CloudWatch",
+        "AWS Lambda",
+        "Amazon EC2 Auto Scaling",
+        "AWS Batch"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EC2 Auto Scaling"
+    },
+    {
+      "pergunta": "Uma empresa quer impedir que os funcionários usem seus desktops virtuais (Workspaces) para visitar sites maliciosos específicos. Qual serviço AWS a empresa deve usar?",
+      "opcoes": ["AWS Network Firewall", "AWS Shield Advanced", "Amazon Route 53", "Amazon GuardDuty"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Network Firewall"
+    },
+    {
+      "pergunta": "O Amazon RDS oferece qual dos seguintes benefícios em relação ao gerenciamento de banco de dados tradicional?",
+      "opcoes": [
+        "A AWS gerencia o tipo de banco de dados",
+        "A AWS amplia automaticamente o tipo de instância sob demanda",
+        "A AWS gerencia os dados armazenados nas tabelas do Amazon RDS.",
+        "AWS gerencia a manutenção dos recursos de infraestrutura."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS gerencia a manutenção dos recursos de infraestrutura."
+    },
+    {
+      "pergunta": "Qual o plano mínimo de suporte da AWS que permite um tempo de resposta de uma hora para casos de suporte?",
+      "opcoes": ["Basic", "Developer", "Business", "Enterprise"],
+      "tipo": "unica",
+      "respostaCorreta": "Business"
+    },
+    {
+      "pergunta": "Qual das seguintes entidades do IAM é associada com um ID de chave de acesso e chave secreta de acesso, quando usado AWS CLI?",
+      "opcoes": ["IAM Group", "IAM Role", "IAM Policy", "IAM User"],
+      "tipo": "unica",
+      "respostaCorreta": "IAM User"
+    },
+    {
+      "pergunta": "Qual das seguintes opções é uma vantagem da AWS?",
+      "opcoes": [
+        "Seus dados ficam automaticamente seguros",
+        "A AWS audita dados do usuário",
+        "AWS gerencia necessidade de conformidade",
+        "Implementação e expansão facilitada"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Implementação e expansão facilitada"
+    },
+    {
+      "pergunta": "Uma empresa precisa auditar uma mudança no gerenciamento de recursos da AWS. Qual os seguintes serviços da AWS ela pode usar?",
+      "opcoes": [
+        "AWS Trusted Advisor",
+        "AWS Config",
+        "Amazon Inspector",
+        "Amazon CloudWatch"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Config"
+    },
+    {
+      "pergunta": "Ao realizar uma análise de custos que suporta o isolamento físico da carga de trabalho de um cliente, qual modelo de hospedagem computacional deve ser contabilizado no faturamento do cliente?",
+      "opcoes": [
+        "Instâncias Reservadas",
+        "Servidores Dedicados",
+        "Instâncias Sob-Demanda (On-Demand)",
+        "Instancias Spot"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Servidores Dedicados"
+    },
+    {
+      "pergunta": "Qual dos seguintes princípios é usado em arquiteturas de aplicações com foco em confiabilidade na nuvem da AWS?",
+      "opcoes": [
+        "Usar multiplas zonas de disponibilidade",
+        "Manter sempre os serviços atualizados",
+        "Testar uma demanda moderada para garantir a confiabilidade",
+        "Gerenciar mudanças através de processos documentados"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Usar multiplas zonas de disponibilidade"
+    },
+    {
+      "pergunta": "Sobre o modelo de responsabilidade compartilhada, qual dos seguintes opções é uma responsabilidade do cliente e da AWS ao mesmo tempo?",
+      "opcoes": [
+        "Controles físicos do data center",
+        "Segurança da Camada física da Rede",
+        "Auditoria do data center",
+        "Gerenciamento de Patches"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Gerenciamento de Patches"
+    },
+    {
+      "pergunta": "Qual dos seguintes princípios faz parte do design de arquitetura em nuvem?",
+      "opcoes": [
+        "Construir aplicações monoliticas",
+        "Usar bancos de dados comerciais",
+        "Componentes fracamente acoplados",
+        "Sempre escalar, nunca diminuir"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Componentes fracamente acoplados"
+    },
+    {
+      "pergunta": "Quando uma empresa pode se beneficiar do uso de instâncias EC2 Spot?",
+      "opcoes": [
+        "Quando uma instância não pode ser parada",
+        "Quando é necessário uma capacidade dedicada",
+        "Quando há uma carga de trabalho crítica",
+        "Quando a aplicação tem flexibilidade no momento de execução"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Quando a aplicação tem flexibilidade no mometo de execução"
+    },
+    {
+      "pergunta": "Um cliente precisa implementar uma nova aplicação e precisa escolher uma região da AWS. Qual dos seguintes fatos podem influenciar a decisão do cliente?",
+      "opcoes": [
+        "Conformidade com a legislação do país",
+        "A apresentação do aplicativo no idioma local",
+        "Custo de resfriamento de data center em regiões mais quentes",
+        "A largura de banda da conexão dos usuários"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Conformidade com a legislação do país"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços podem ser usados para longo prazo e baixo custo de armazenamento de backup?",
+      "opcoes": ["AWS Snowball", "AWS EBS", "Amazon S3 Glacier", "Amazon RDS"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon S3 Glacier"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços é o gerenciador de sistemas de nome de domínio da AWS?",
+      "opcoes": ["Amazon Neptune", "Amazon LightSail", "Amazon Route53", "Amazon VPC"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Route53"
+    },
+    {
+      "pergunta": "Qual a melhor abordagem para transcodificar um número grande de arquivo de vídeos individuais aderindo aos princípios de arquitetura da AWS?",
+      "opcoes": [
+        "Usar uma instância que tenha bastante GPU",
+        "Usar um hardware dedicado",
+        "Usar varias instâncias em paralelo",
+        "Usar uma instância poderosa fora do horário de pico"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Usar varias instâncias em paralelo"
+    },
+    {
+      "pergunta": "Se uma empresa precisa auditar uma mudança no gerenciamento de recursos da AWS, qual os seguintes serviços da AWS ela pode usar?",
+      "opcoes": [
+        "AWS Trusted Advisor",
+        "AWS Config",
+        "Amazon Inspector",
+        "Amazon CloudWatch"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Config"
+    },
+    {
+      "pergunta": "Um dos benefícios do EC2 On-Demand é?",
+      "opcoes": [
+        "Pague apenas pelo tempo que usar",
+        "Taxa diária independente do tempo que usar",
+        "Recebe desconto ao assinar por 1 ou 3 anos",
+        "Pague adiantado e recebe desconto"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Pague apenas pelo tempo que usar"
+    },
+    {
+      "pergunta": "Uma empresa deseja criar business intelligence com alguns dashboards em seus processos de análises. Qual serviço a empresa deveria usar?",
+      "opcoes": ["RDS", "Athena", "QuickSight", "Redshift"],
+      "tipo": "unica",
+      "respostaCorreta": "QuickSight"
+    },
+    {
+      "pergunta": "Qual dos princípios de arquitetura em nuvem é recomendado quando você está re-arquitetando uma grande aplicação?",
+      "opcoes": [
+        "Projetar para escalabilidade",
+        "Usar servidores fixos",
+        "Usar monitoramento manual",
+        "Projetar uma aplicação monolitica."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Projetar para escalabilidade"
+    },
+    {
+      "pergunta": "Qual beneficio da nuvem da AWS é oferece suporte para mudanças de demandas de carga de trabalho?",
+      "opcoes": ["Confiabilidade", "Elasticidade", "Segurança", "Tolerância a falha"],
+      "tipo": "unica",
+      "respostaCorreta": "Elasticidade"
+    },
+    {
+      "pergunta": "Em quantas zonas de disponibilidade um recurso computacional deve ser provisionado para atingir alta disponibilidade?",
+      "opcoes": ["Mínimo uma", "Mínimo duas", "Mínimo três", "Mínimo 4"],
+      "tipo": "unica",
+      "respostaCorreta": "Mínimo duas"
+    },
+    {
+      "pergunta": "Qual recurso permite que desenvolvedores acessem os serviços da AWS pelo código da aplicação?",
+      "opcoes": [
+        "AWS Config",
+        "AWS Code Pipeline",
+        "AWS Software Development Kit (SDK)",
+        "AWS Management Console"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Software Development Kit (SDK)"
+    },
+    {
+      "pergunta": "Qual serviço da AWS prove um serviço de armazenamento hibrido para que aplicações on-premises usarem armazenamento em nuvem?",
+      "opcoes": [
+        "AWS SnowBall",
+        "AWS Storage Gateway",
+        "Amazon Elastic Block Storage",
+        "Amazon S3"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Storage Gateway"
+    },
+    {
+      "pergunta": "Quais são os 6 pilares do Well-Architected Framework?",
+      "opcoes": [
+        "Excelência Operacional, Segurança, Confiabilidade, Eficiência de Performance, Otimização de custos, e sustentabilidade",
+        "Excelência Operacional, Segurança, Escalabilidade, Plataforma, Otimização de custos, e sustentabilidade",
+        "Excelência Operacional, Segurança, Escalabilidade, Resiliência, Otimização de custos, e sustentabilidade",
+        "Negócio, Segurança, Confiabilidade, Pessoas, Otimização de custos, e sustentabilidade"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Excelência Operacional, Segurança, Confiabilidade, Eficiência de Performance, Otimização de custos, e sustentabilidade"
+    },
+    {
+      "pergunta": "Qual dos serviços abaixo possui mitigação para ataques DDoS?",
+      "opcoes": ["Amazon Inspector", "Amazon CloudFront", "AWS VPC", "AWS Direct Connect"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon CloudFront"
+    },
+    {
+      "pergunta": "Qual serviço da AWS prove uma solução de armazenamento compartilhado simples e escalável para instâncias AWS e on-premises baseadas em Linux?",
+      "opcoes": ["Amazon Glacier", "Amazon S3", "Amazon EBS", "Amazon EFS"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EFS"
+    },
+    {
+      "pergunta": "Qual recurso do AWS IAM é usado para associar permissões para múltiplos usuários?",
+      "opcoes": [
+        "Politicas de senha",
+        "Chave de Acesso",
+        "Multi Fator de Autenticação.",
+        "Grupos"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Grupos"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é de CDN (Content Delivery Network) que entrega seguramente dados, vídeos e aplicações para usuários globalmente com baixa latência e alta velocidade?",
+      "opcoes": [
+        "Amazon Direct Connect",
+        "AWS CloudFormation",
+        "AWS CloudFront",
+        "Amazon Pinpoint"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudFront"
+    },
+    {
+      "pergunta": "Uma empresa deseja reduzir servidores físicos usados por desenvolvedores para executar códigos. Qual serviço pode ir de encontro com essa necessidade através de arquitetura serverless?",
+      "opcoes": ["Amazon Neptune", "AWS Lambda", "Amazon DynamoDB", "AWS CodeCommit"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Lambda"
+    },
+    {
+      "pergunta": "Uma empresa de e-commerce precisa rapidamente migrar exabyte de dados do ambiente on-premises para AWS. Qual serviço a empresa deve utilizar?",
+      "opcoes": ["AWS Snowball", "AWS Snowmobile", "AWS Batch", "AWS Direct Connect"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Snowmobile"
+    },
+    {
+      "pergunta": "Um engenheiro de redes precisa monitorar o tráfego de entrada e saída de uma instância EC2. Qual recurso da VPC (Virtual Private Cloud) o engenheiro pode usar?",
+      "opcoes": ["VPC Flow Logs", "Cloud Watch", "Inspector", "GuardDuty"],
+      "tipo": "unica",
+      "respostaCorreta": "VPC Flow Logs"
+    },
+    {
+      "pergunta": "Uma empresa está usando o Amazon RDS. Qual tarefa é de responsabilidade da empresa, segundo o modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Aplique pequenos patches ao banco de dados",
+        "Aplicar patches ao sistema operacional subjacente",
+        "Aplicar opções de criptografia ao banco de dados",
+        "Gerenciar o hardware do servidor subjacente no qual o Amazon RDS é executado."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Aplicar opções de criptografia ao banco de dados"
+    },
+    {
+      "pergunta": "Qual das alternativas a seguir é uma vantagem da Nuvem AWS?",
+      "opcoes": [
+        "Trocar despesas variáveis por despesas de capital",
+        "Concentre-se no gerenciamento da infraestrutura de hardware",
+        "Global em minutos",
+        "Altas economias de escala"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Global em minutos"
+    },
+    {
+      "pergunta": "De acordo com o modelo de responsabilidade compartilhada da AWS, o cliente é responsável por aplicar as atualizações e patches de segurança mais recentes para quais dos itens a seguir?",
+      "opcoes": ["Amazon S3", "Amazon DynamoDB", "Amazon EC2 instances", "Amazon RDS instances"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon EC2 instances"
+    },
+    {
+      "pergunta": "Qual serviço da AWS oferece a uma empresa a capacidade de usar uma conexão privada e dedicada entre uma VPC e um data center local?",
+      "opcoes": [
+        "AWS CloudFormation",
+        "Amazon API Gateway",
+        "AWS Direct Connect",
+        "AWS Systems Manager"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Direct Connect"
+    },
+    {
+      "pergunta": "Qual serviço da AWS oferece detecção de ameaças e monitora continuamente atividades maliciosas e comportamento não autorizado em contas AWS?",
+      "opcoes": [
+        "Amazon Macie",
+        "Amazon GuardDuty",
+        "VPC Security Group",
+        "AWS Config"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon GuardDuty"
+    },
+    {
+      "pergunta": "Qual serviço a seguir exige o uso de uma VPC?",
+      "opcoes": ["Amazon Elastic File System (Amazon EFS)", "Amazon S3", "Amazon Cognito", "Amazon DynamoDB"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Elastic File System (Amazon EFS)"
+    },
+    {
+      "pergunta": "Qual das opções a seguir o Amazon CloudFront usa para distribuir conteúdo aos usuários ao redor o mundo?",
+      "opcoes": ["Availability Zones", "Amazon VPC", "Route 53", "Edge locations"],
+      "tipo": "unica",
+      "respostaCorreta": "Edge locations"
+    },
+    {
+      "pergunta": "Uma empresa está usando instâncias do Amazon EC2. Quais tarefas não são de responsabilidade da empresa, segundo o modelo de responsabilidade compartilhada da AWS?",
+      "opcoes": [
+        "Identificar quais usuários podem acessar as instâncias do EC2 e gerencie suas permissões no sistema operacional",
+        "Realizar atualizações no sistema operacional da EC2.",
+        "Cuidar da segurança interna do sistema operacional.",
+        "Aplique as atualizações do hipervisor onde as instâncias EC2 estão em execução."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Aplique as atualizações do hipervisor onde as instâncias EC2 estão em execução."
+    },
+    {
+      "pergunta": "Uma empresa deseja atualizar seu aplicativo de processamento de dados on-line implementando serviços baseados em contêiner que são executados por 4 horas por vez. A empresa não deseja provisionar ou gerenciar instância do servidor. Qual serviço da AWS atenderá a esses requisitos?",
+      "opcoes": ["Amazon EC2", "AWS Lambda", "AWS Fargate", "AWS LightSail"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Fargate"
+    },
+    {
+      "pergunta": "Um hospital irá utilizar servidores por pelo menos 3 anos, e essas instâncias EC2 não podem ser interrompidas. Qual opção de compra de instância EC2 atende esses requisitos e é a MAIS econômica?",
+      "opcoes": ["On-Demand", "Spot Instance", "Saving Plans", "Dedicated Hosts"],
+      "tipo": "unica",
+      "respostaCorreta": "Saving Plans"
+    },
+    {
+      "pergunta": "Qual das alternativas a seguir não é um pilar do AWS Well-Architected Framework?",
+      "opcoes": [
+        "Segurança",
+        "Excelencia Operacional",
+        "Escalabilidade",
+        "Sustentabilidade"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Escalabilidade"
+    },
+    {
+      "pergunta": "Como um usuário pode proteger uma instância do Amazon EC2 contra um endereço IP suspeito?",
+      "opcoes": [
+        "Bloquear o IP na regra de entrada de uma ACL de rede.",
+        "Bloquear o IP na regra de saída de um grupo de segurança e ACL de rede.",
+        "Bloqueie o IP na regra de saída de um grupo de segurança.",
+        "Bloqueie o IP na regra de entrada de um grupo de segurança e ACL de rede."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Bloquear o IP na regra de entrada de uma ACL de rede."
+    },
+    {
+      "pergunta": "Qual pilar do AWS Well-Architected Framework está focado na capacidade de uma carga de trabalho executar a função pretendida de maneira correta e consistente no tempo esperado?",
+      "opcoes": [
+        "Segurança",
+        "Excelência Operacional",
+        "Eficiência de Performance",
+        "Confiabilidade"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Eficiência de Performance"
+    },
+    {
+      "pergunta": "Qual serviço da AWS é utilizado para hospedar data bases?",
+      "opcoes": ["AWS Data Pipeline", "AWS Artifact", "Amazon RDS", "AWS Batch"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon RDS"
+    },
+    {
+      "pergunta": "Sua empresa precisa consolidar dados de diferentes fontes, para facilitar as tomadas de decisões estratégicas. Antes de consolidar, eles precisam ser tratados. Qual recurso da AWS pode apoiar nessa atividade?",
+      "opcoes": ["AWS Glue", "AWS ETL", "AWS DynamoDB", "AWS Athena"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Glue"
+    },
+    {
+      "pergunta": "Você precisa enviar e-mails em massa para realizar um comunicado em sua empresa. Qual dos seguintes serviços é o mais indicado?",
+      "opcoes": [
+        "AWS SNS (Simple Notification Service)",
+        "AWS Workmail",
+        "AWS SES (Simple Email Service)",
+        "AWS Connect"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS SES (Simple Email Service)"
+    },
+    {
+      "pergunta": "Qual dos seguintes cenários é um exemplo adequado para aproveitar o serviço AWS Batch?",
+      "opcoes": [
+        "Enviar e-mails em tempo real para os usuários de um aplicativo de mensagens.",
+        "Fazer streaming de vídeos ao vivo para uma plataforma de transmissão.",
+        "Processar em lote milhares de imagens para detecção de objetos em um projeto de visão computacional.",
+        "Armazenar e gerenciar bancos de dados relacionais para um site de comércio eletrônico."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Processar em lote milhares de imagens para detecção de objetos em um projeto de visão computacional."
+    },
+    {
+      "pergunta": "Você possuí imagens Docker e deseja armazena-las na infraestrutura da AWS. Qual serviço seria o mais indicado?",
+      "opcoes": ["AWS Fargate", "EKS (Elastic Kubernetes Service)", "ECS (Elastic Container Service)", "ECR (Elastic Container Registry)"],
+      "tipo": "unica",
+      "respostaCorreta": "ECR (Elastic Container Registry)"
+    },
+    {
+      "pergunta": "Você é um desenvolvedor de uma plataforma de e-learning. Você precisa implementar um recurso onde seja possível o aluno ouvir um texto escrito. Qual ferramenta da AWS pode converter um texto em vozes realistas?",
+      "opcoes": ["AWS Translate", "AWS Transcribe", "AWS Polly", "AWS Lex"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Polly"
+    },
+    {
+      "pergunta": "Sua empresa pretende migrar suas aplicações on-premise para Cloud. Qual serviço da AWS pode ajudar a planejar esse projeto de migração por meio de coleta de informações dos data centers on-premise?",
+      "opcoes": [
+        "AWS Application Discovery",
+        "AWS Transfer Family",
+        "AWS DMS (Database Migration Service)",
+        "Nenhuma das alternativas"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Application Discovery"
+    },
+    {
+      "pergunta": "Todas as reuniões em sua empresa são gravadas em MP3. Você precisa transcrever o texto de maneira automática. Qual serviço da AWS poderia analisar o arquivo de áudio e transcrever o texto?",
+      "opcoes": ["AWS Translate", "AWS Transcribe", "AWS Polly", "AWS Lex"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Transcribe"
+    },
+    {
+      "pergunta": "Sua empresa queria ter um atendimento mais humanizado no chatbot (cliente conversa com o sistema e é respondido). Qual serviço da AWS poderia auxiliar nessa melhoria?",
+      "opcoes": ["AWS Translate", "AWS Transcribe", "AWS Polly", "AWS Lex"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Lex"
+    },
+    {
+      "pergunta": "Você precisa criar uma aplicação que analisa imagens e identifica se a imagem se trata de pessoas ou objetos. Qual recurso de Machine Learning da AWS poderia apoiar nesse trabalho?",
+      "opcoes": ["AWS Lex", "AWS Rekognition", "Amazon Kendra", "Amazon Comprehend"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Rekognition"
+    },
+    {
+      "pergunta": "Sua empresa deseja coletar dados de provedores para enriquecer suas análises. Qual o recurso da AWS onde é possível comprar dados de provedores de dados?",
+      "opcoes": ["AWS Data Exchange", "AWS Redshift", "AWS DynamoDB", "AWS RDS"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Data Exchange"
+    },
+    {
+      "pergunta": "Sua empresa deseja virtualizar o ambiente de usuários (home office) na AWS para ter maior domínio. Qual recurso da AWS te ajuda a fornecer aos usuários máquinas virtuais?",
+      "opcoes": ["Amazon EC2", "Amazon Workspace", "Amazon LightSail", "AWS Batch"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Workspace"
+    }
+  ],
+  "simulado_5": [
+    {
+      "pergunta": "Qual das seguintes afirmações é verdadeira sobre o modelo de preços sob demanda da AWS?",
+      "opcoes": [
+        "É a opção mais econômica para cargas de trabalho de longa duração",
+        "Requer um compromisso de longo prazo para obter descontos",
+        "Permite pagar por hora ou por segundo",
+        "É o único modelo de preços oferecido pela AWS"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Permite pagar por hora ou por segundo"
+    },
+    {
+      "pergunta": "O que são zonas de disponibilidade (Availability Zones) na AWS?",
+      "opcoes": [
+        "Um conjunto de data centers independentes e interconectados dentro de uma mesma região da AWS, operando em redundância.",
+        "Um único data center que hospeda todos os servidores de uma região.",
+        "Um conjunto de recursos da AWS que ainda estão em disponibilidade (não foram usados) para criação de recursos.",
+        "Um mecanismo de alta disponibilidade que replica dados entre múltiplas regiões."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Um conjunto de data centers independentes e interconectados dentro de uma mesma região da AWS, operando em redundância."
+    },
+    {
+      "pergunta": "Qual é o principal objetivo da criptografia de dados na segurança da nuvem?",
+      "opcoes": [
+        "Garantir a integridade dos dados",
+        "Garantir a confidencialidade dos dados",
+        "Garantir a disponibilidade dos dados",
+        "Garantir a autenticidade dos dados"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Garantir a confidencialidade dos dados"
+    },
+    {
+      "pergunta": "Você está gerenciando vários recursos na AWS e deseja monitorar os custos de cada recurso. Qual é o serviço da AWS que permite definir e monitorar orçamentos de custos?",
+      "opcoes": ["EC2 Auto Scaling", "S3", "Budgets", "RDS"],
+      "tipo": "unica",
+      "respostaCorreta": "Budgets"
+    },
+    {
+      "pergunta": "Qual é uma das principais diferenças entre a nuvem pública e a nuvem privada?",
+      "opcoes": [
+        "Localização dos datacenters.",
+        "Propriedade dos datacenters.",
+        "Modelos de cobrança.",
+        "Recursos de segurança."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Propriedade dos datacenters."
+    },
+    {
+      "pergunta": "Sua empresa precisa hospedar um site estático na AWS. Qual serviço seria o mais indicado?",
+      "opcoes": ["EC2", "Amazon S3", "Lambda", "EFS"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon S3"
+    },
+    {
+      "pergunta": "Qual é o objetivo do 'controle de acesso' na segurança da nuvem?",
+      "opcoes": [
+        "Proteger a rede e as informações da nuvem contra ameaças externas",
+        "Garantir que apenas usuários autorizados tenham acesso às informações",
+        "Proteger a rede e as informações da nuvem contra ameaças internas",
+        "Garantir que todos os usuários tenham acesso às informações"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Garantir que apenas usuários autorizados tenham acesso às informações"
+    },
+    {
+      "pergunta": "Como a AWS cobra pelo uso do Amazon RDS?",
+      "opcoes": [
+        "Por instância criada",
+        "Por solicitação de download",
+        "Por solicitação de upload",
+        "Por hora de banco de dados em execução"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Por hora de banco de dados em execução"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços de nuvem é um exemplo de plataforma como serviço (PaaS)?",
+      "opcoes": [
+        "Amazon Elastic Compute Cloud (EC2)",
+        "Amazon VPC",
+        "Amazon Elastic Block Store (EBS)",
+        "Amazon Elastic Beanstalk"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Elastic Beanstalk"
+    },
+    {
+      "pergunta": "Está ocorrendo desligamentos de instâncias EC2 em determinados horários fixos diariamente. Qual recurso de log ou auditoria pode te ajudar a identificar qual recurso está fazendo isso?",
+      "opcoes": ["AWS Monitor", "AWS CloudTrail", "AWS SQS", "AWS Lambda"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "Qual é o serviço da AWS que permite que os clientes implantem e gerenciem aplicativos em contêineres?",
+      "opcoes": ["Amazon EC2", "AWS Elastic Beanstalk", "Amazon S3", "Amazon ECS"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon ECS"
+    },
+    {
+      "pergunta": "Qual das seguintes opções é uma estratégia para reduzir custos na AWS?",
+      "opcoes": [
+        "Escolher a região mais próxima de sua localidade",
+        "Usar Instâncias reservadas",
+        "Usar instâncias sob demanda",
+        "Usar o AWS Budgets para controlar o orçamento"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Usar Instâncias reservadas"
+    },
+    {
+      "pergunta": "Qual serviço da AWS pode ser usado para criar e gerenciar caches de dados em memória na nuvem?",
+      "opcoes": ["Amazon ElastiCache", "Amazon S3", "Amazon Redshift", "Amazon Aurora"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon ElastiCache"
+    },
+    {
+      "pergunta": "O que significa 'responsabilidade compartilhada' na AWS?",
+      "opcoes": [
+        "Ambas as partes compartilham a responsabilidade de garantir a segurança e conformidade",
+        "A AWS é responsável por tudo",
+        "O cliente é responsável por tudo",
+        "A responsabilidade é dividida em três partes iguais"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Ambas as partes compartilham a responsabilidade de garantir a segurança e conformidade"
+    },
+    {
+      "pergunta": "Qual é o serviço da AWS que fornece uma maneira de armazenar e gerenciar chaves criptográficas?",
+      "opcoes": [
+        "Amazon S3",
+        "AWS Identity and Access Management (IAM)",
+        "AWS Protector",
+        "AWS Key Management Service"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Key Management Service"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços AWS é usado para executar cargas de trabalho de análise de dados em escala?",
+      "opcoes": ["Amazon RDS", "Amazon Redshift", "Amazon DynamoDB", "Amazon EC2"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Redshift"
+    },
+    {
+      "pergunta": "Quantas zonas de disponibilidade existem em uma região da AWS?",
+      "opcoes": ["Pelo menos uma", "Pelo menos duas", "Pelo menos três", "Pelo menos quatro"],
+      "tipo": "unica",
+      "respostaCorreta": "Pelo menos duas"
+    },
+    {
+      "pergunta": "Como a AWS calcula os preços dos serviços?",
+      "opcoes": [
+        "Com base no número de contas da AWS que você possui",
+        "Com base no número de usuários que acessam seus serviços",
+        "Com base no número de instâncias que você está executando",
+        "Com base no uso dos serviços e nos recursos consumidos"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Com base no uso dos serviços e nos recursos consumidos"
+    },
+    {
+      "pergunta": "Você precisa melhorar a segurança de dados em trânsito na AWS. Qual é a melhor prática de segurança entre as opções abaixo?",
+      "opcoes": [
+        "Utilizar o serviço de antivírus AWS Protector",
+        "Usar HTTPS ou SSL/TLS para criptografar dados em trânsito",
+        "Usar o protocolo RDP",
+        "A AWS não recomenda utilizar dados em transito"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Usar HTTPS ou SSL/TLS para criptografar dados em trânsito"
+    },
+    {
+      "pergunta": "Você precisa configurar um serviço de banco de dados de chave-valor para armazenar dados de uma nova aplicação em sua empresa. Qual dos seguintes serviços seria mais indicado?",
+      "opcoes": ["Amazon DynamoDB", "Amazon RDS", "Amazon Redshift", "Amazon Aurora"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon DynamoDB"
+    },
+    {
+      "pergunta": "Quais são os principais tipos de nuvem?",
+      "opcoes": [
+        "Pública, privada e híbrida",
+        "Pública, privada e pessoal",
+        "Pública, empresarial e híbrida",
+        "Pública, empresarial e pessoal"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Pública, privada e híbrida"
+    },
+    {
+      "pergunta": "Como a AWS cobra pelo uso de armazenamento de objetos no Amazon S3?",
+      "opcoes": [
+        "Por hora de uso",
+        "Por GB de dados armazenados por mês",
+        "Por solicitação de download",
+        "Por solicitação de upload"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Por GB de dados armazenados por mês"
+    },
+    {
+      "pergunta": "Qual é o serviço da AWS que fornece uma maneira de monitorar, armazenar e acessar registros de aplicativos e serviços?",
+      "opcoes": ["Amazon Monitor", "Amazon Analytics", "AWS Trusted Advisor", "Amazon CloudWatch Logs"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon CloudWatch Logs"
+    },
+    {
+      "pergunta": "Qual dos serviços abaixo fornece um catálogo de serviços ou aplicações desenvolvidas por terceiros, prontas para serem utilizadas e atender diversas necessidades?",
+      "opcoes": ["AWS Service Catalog", "AWS MarketPlace", "AWS AMI", "AWS OpsWork"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS MarketPlace"
+    },
+    {
+      "pergunta": "Qual item abaixo não faz parte dos 6 pilares do Well-Architected Framework?",
+      "opcoes": [
+        "Excelência Operacional",
+        "Segurança",
+        "Sustentabilidade",
+        "Desacoplamento"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Desacoplamento"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços da AWS é usado para proteger os dados em repouso?",
+      "opcoes": ["AWS KMS", "AWS S3", "AWS EC2", "AWS RDS"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS KMS"
+    },
+    {
+      "pergunta": "Pensando em prevenir uma possível indisponibilidade total de uma região da AWS, qual recurso do RDS (banco de dados relacional) seria mais indicado para desastre recovery?",
+      "opcoes": ["Multi-AZ", "Cluster Multi-AZ", "Read Replicas", "Auto Scaling"],
+      "tipo": "unica",
+      "respostaCorreta": "Read Replicas"
+    },
+    {
+      "pergunta": "É possível migrar aplicações monolíticas, sem refatoração, para o AWS ECS?",
+      "opcoes": [
+        "Não. ECS não aceita aplicações monolíticas.",
+        "Sim. É o recomendado pela AWS",
+        "Sim. Porém não trará grandes benefícios como uma arquitetura de microsserviços",
+        "Sim. Inclusive a aplicação ficará mais rápida"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Sim. Porém não trará grandes benefícios como uma arquitetura de microsserviços"
+    },
+    {
+      "pergunta": "Qual dos seguintes controles de segurança é usado para garantir que somente usuários autorizados possam acessar os recursos da AWS?",
+      "opcoes": [
+        "Controle de acesso",
+        "Controle de autenticação",
+        "Controle de confidencialidade",
+        "Controle de integridade"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Controle de acesso"
+    },
+    {
+      "pergunta": "Seu time de desenvolvimento solicitou a criação de 20 máquinas virtuais de desktop, linux e windows, para novos desenvolvedores. Qual recurso abaixo pode te ajudar com essa solicitação?",
+      "opcoes": ["AWS EC2", "AWS CLI (Command Line)", "Amazon WorkSpaces", "Amazon Desktop"],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon WorkSpaces"
+    },
+    {
+      "pergunta": "Quais das opções abaixo NÃO fazem parte do plano de suporte da AWS",
+      "opcoes": ["Enterprise", "Developer", "Basic", "Advisor"],
+      "tipo": "unica",
+      "respostaCorreta": "Advisor"
+    },
+    {
+      "pergunta": "Qual é o objetivo do AWS Artifact?",
+      "opcoes": [
+        "Monitorar a segurança de seus recursos da AWS",
+        "Fornecer recursos de computação escaláveis na nuvem",
+        "Fornece acesso a documentação de conformidade e segurança da AWS",
+        "Permitir a migração de dados para a nuvem AWS"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Fornece acesso a documentação de conformidade e segurança da AWS"
+    },
+    {
+      "pergunta": "Qual serviço de banco de dados abaixo é totalmente gerenciado pala AWS",
+      "opcoes": ["PostgreSQL", "DynamoDB", "MySQL", "Oracle"],
+      "tipo": "unica",
+      "respostaCorreta": "DynamoDB"
+    },
+    {
+      "pergunta": "Como a nuvem pública pode ajudar a reduzir custos para as empresas?",
+      "opcoes": [
+        "Oferecendo uma infraestrutura de TI escalável",
+        "Eliminando a necessidade de comprar e manter hardware",
+        "Permitindo que as empresas paguem apenas pelos recursos que usam",
+        "Todas as anteriores"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Todas as anteriores"
+    },
+    {
+      "pergunta": "Qual é o objetivo do AWS Trusted Advisor?",
+      "opcoes": [
+        "Monitorar a segurança de seus recursos da AWS",
+        "Fornecer recursos de computação escaláveis na nuvem",
+        "Fornecer recomendações para otimizar o desempenho, reduzir custos e melhorar a segurança da AWS",
+        "Permitir a migração de dados para a nuvem AWS"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Fornecer recomendações para otimizar o desempenho, reduzir custos e melhorar a segurança da AWS"
+    },
+    {
+      "pergunta": "Qual o tamanho máximo de 1 arquivo no Amazon S3, e qual a capacidade máxima de uma Bucket.",
+      "opcoes": [
+        "Arquivo: máximo 5GB e Bucket: Máximo 5TB",
+        "Arquivo: Ilimitado e Bucket: Máximo 5TB",
+        "Arquivo: máximo 5TB e Bucket: Ilimitado",
+        "Arquivo: Ilimitado e Bucket: Ilimitado."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Arquivo: máximo 5TB e Bucket: Ilimitado"
+    },
+    {
+      "pergunta": "Qual é o serviço da AWS usado para criptografar dados em trânsito?",
+      "opcoes": [
+        "AWS KMS",
+        "AWS Trusted Advisor",
+        "AWS Config",
+        "AWS Certificate Manager"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Certificate Manager"
+    },
+    {
+      "pergunta": "Qual serviço da AWS pode ser usado para realizar consultas SQL no Amazon S3?",
+      "opcoes": ["AWS RDS", "AWS Aurora", "AWS Athena", "AWS Redshift"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Athena"
+    },
+    {
+      "pergunta": "Qual é a prática recomendada para garantir a segurança do seu ambiente da AWS?",
+      "opcoes": [
+        "Armazene todas as suas informações em um único bucket do Amazon S3",
+        "Use grupos de segurança para controlar o tráfego de entrada e saída",
+        "Habilite o AWS Firewall Security",
+        "Atualizar regularmente o sistema operacional e aplicativos"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Use grupos de segurança para controlar o tráfego de entrada e saída"
+    },
+    {
+      "pergunta": "Qual recurso da AWS permite a criação de rede privada para criação de seus recursos computacionais?",
+      "opcoes": ["AWS VPC", "AWS Route 53", "AWS Network", "On Demand"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS VPC"
+    },
+    {
+      "pergunta": "Qual recurso abaixo permite que aplicações ou recursos acessem recursos ou serviços dentro da AWS?",
+      "opcoes": ["IAM Roles", "IAM Users", "IAM Groups", "IAM Acess Pool"],
+      "tipo": "unica",
+      "respostaCorreta": "IAM Roles"
+    },
+    {
+      "pergunta": "Qual é o objetivo principal do Amazon SQS?",
+      "opcoes": [
+        "Armazenar e recuperar dados em um banco de dados relacional.",
+        "Processar dados em tempo real em uma infraestrutura de streaming.",
+        "Permitir que os aplicativos enviem e recebam mensagens assíncronas entre componentes distribuídos.",
+        "Fornecer acesso a recursos computacionais escaláveis e de alto desempenho."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Permitir que os aplicativos enviem e recebam mensagens assíncronas entre componentes distribuídos."
+    },
+    {
+      "pergunta": "Você precisa configurar um sistema de banco de dados em RDS tolerante a falha, qual das opções abaixo é a mais indicada?",
+      "opcoes": ["Multi-AZ", "Multi-Instances", "Read Replicas", "Auto Scaling"],
+      "tipo": "unica",
+      "respostaCorreta": "Multi-AZ"
+    },
+    {
+      "pergunta": "Quais são os dois tipos de filas do Amazon SQS?",
+      "opcoes": [
+        "Filas padrão e filas de FIFO.",
+        "Filas de transmissão e filas de recebimento.",
+        "Filas de entrada e filas de saída.",
+        "Filas públicas e filas privadas."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Filas padrão e filas de FIFO."
+    },
+    {
+      "pergunta": "Qual é o modelo de cobrança padrão do Amazon EC2?",
+      "opcoes": [
+        "Por uso de armazenamento",
+        "Por hora em que a instância estiver em execução",
+        "Por uso de largura de banda",
+        "Por número de solicitações"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Por hora em que a instância estiver em execução"
+    },
+    {
+      "pergunta": "Sua empresa precisa hospedar um site em WordPress. Qual serviço seria o mais indicado?",
+      "opcoes": ["Amazon S3", "LightSail", "Lambda", "EFS"],
+      "tipo": "unica",
+      "respostaCorreta": "LightSail"
+    },
+    {
+      "pergunta": "Qual dos seguintes modelos de serviço de computação em nuvem oferece o maior nível de controle sobre a infraestrutura para o cliente?",
+      "opcoes": [
+        "Software como Serviço (SaaS).",
+        "Plataforma como Serviço (PaaS).",
+        "Infraestrutura como Serviço (IaaS).",
+        "Nenhum deles, pois todos oferecem o mesmo nível de controle."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Infraestrutura como Serviço (IaaS)."
+    },
+    {
+      "pergunta": "Você deseja receber notificações automáticas por e-mail quando seus custos de serviços da AWS excederem um determinado limite. Qual serviço da AWS mais adequado?",
+      "opcoes": ["Advisor", "Budgets", "Pricing Calculator", "Cloud Watch"],
+      "tipo": "unica",
+      "respostaCorreta": "Budgets"
+    },
+    {
+      "pergunta": "Qual é a vantagem de usar a autenticação de dois fatores na segurança da nuvem?",
+      "opcoes": [
+        "Aumenta a complexidade das senhas",
+        "Reduz o número de senhas necessárias",
+        "Garante a integridade dos dados",
+        "Garante a autenticidade do usuário"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Garante a autenticidade do usuário"
+    },
+    {
+      "pergunta": "Você é um desenvolvedor que precisa executar um trabalho em lote de processamento de dados em grande escala. Qual serviço da AWS você usaria e por quê?",
+      "opcoes": ["S3", "Lambda", "Batch", "Redshift"],
+      "tipo": "unica",
+      "respostaCorreta": "Batch"
+    },
+    {
+      "pergunta": "Qual dos seguintes modelos de serviço de computação em nuvem é mais adequado para desenvolvedores que desejam se concentrar na construção de aplicações, sem se preocupar com a infraestrutura subjacente?",
+      "opcoes": [
+        "Software como Serviço (SaaS).",
+        "Plataforma como Serviço (PaaS).",
+        "Infraestrutura como Serviço (IaaS).",
+        "Nenhum deles, pois todos exigem que o desenvolvedor gerencie a infraestrutura."
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Plataforma como Serviço (PaaS)."
+    },
+    {
+      "pergunta": "Você está gerenciando um grande número de serviços da AWS e deseja analisar seus custos gerais. Qual é o serviço da AWS que fornece uma análise abrangente de seus custos?",
+      "opcoes": [
+        "Cost Explorer",
+        "Advisor",
+        "Cloud Watch",
+        "Pricing Calculator"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Cost Explorer"
+    },
+    {
+      "pergunta": "Qual das seguintes opções é um serviço de segurança gerenciado da AWS que fornece monitoramento de segurança e conformidade para recursos da AWS?",
+      "opcoes": ["AWS Config", "AWS IAM", "AWS GuardDuty", "AWS CloudTrail"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS GuardDuty"
+    },
+    {
+      "pergunta": "Você deseja registrar um novo domínio para seu website. Qual é o serviço da AWS que você deve usar?",
+      "opcoes": ["Route 53", "VPC", "Lambda", "S3"],
+      "tipo": "unica",
+      "respostaCorreta": "Route 53"
+    },
+    {
+      "pergunta": "Qual dos seguintes exemplos não é um benefício da computação em nuvem?",
+      "opcoes": ["Baixo custo", "Escalabilidade", "Flexibilidade", "Segurança"],
+      "tipo": "unica",
+      "respostaCorreta": "Baixo custo"
+    },
+    {
+      "pergunta": "Qual é o serviço da AWS que fornece um registro de auditoria para seus recursos da AWS?",
+      "opcoes": ["AWS Config", "AWS IAM", "AWS CloudTrail", "AWS Audit"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS CloudTrail"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços da AWS é usado para gerenciar o acesso aos recursos da AWS?",
+      "opcoes": ["AWS Config", "AWS IAM", "AWS CloudTrail", "AWS S3"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS IAM"
+    },
+    {
+      "pergunta": "Qual recurso da AWS garante que você sempre tenha a quantidade adequada de instância para sua aplicação?",
+      "opcoes": ["Route 53", "ELB", "Auto Scaling", "VPC"],
+      "tipo": "unica",
+      "respostaCorreta": "Auto Scaling"
+    },
+    {
+      "pergunta": "Qual dos seguintes princípios de design de arquitetura em nuvem é o principal para ajudar a garantir a alta disponibilidade dos aplicativos?",
+      "opcoes": ["Flexibilidade", "Segurança", "Elasticidade", "Redundância"],
+      "tipo": "unica",
+      "respostaCorreta": "Redundância"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços da AWS pode ser usado para verificar a conformidade de uma organização com os padrões de segurança?",
+      "opcoes": ["AWS KMS", "AWS IAM", "AWS Config", "AWS WAF"],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Config"
+    },
+    {
+      "pergunta": "Qual dos seguintes serviços da AWS é mais adequado para processar grandes volumes de dados em tempo real, como dados de sensores IoT ou registros de eventos de aplicativos?",
+      "opcoes": ["Amazon Kinesis.", "Amazon SQS.", "Amazon RDS.", "Amazon ECS."],
+      "tipo": "unica",
+      "respostaCorreta": "Amazon Kinesis."
+    },
+    {
+      "pergunta": "Qual dos seguintes princípios de design de arquitetura em nuvem é o principal para ajudar a garantir a escalabilidade dos aplicativos?",
+      "opcoes": ["Flexibilidade", "Segurança", "Elasticidade", "Redundância"],
+      "tipo": "unica",
+      "respostaCorreta": "Elasticidade"
+    },
+    {
+      "pergunta": "Qual dos seguintes recursos da AWS pode ser usado para controlar o tráfego de entrada para suas instâncias EC2?",
+      "opcoes": [
+        "AWS CloudFormation",
+        "AWS CloudTrail",
+        "AWS Elastic Load Balancer",
+        "AWS Security Groups"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Security Groups"
+    },
+    {
+      "pergunta": "Em um design de utilização de nuvem hibrida, você deseja manter sua carga de trabalho local, e parte dos arquivos na AWS. Qual serviço abaixo é o mais indicado para esse cenário?",
+      "opcoes": [
+        "AWS Storage Gateway",
+        "Amazon S3",
+        "AWS Organizations",
+        "AWS Data Migration Service"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "AWS Storage Gateway"
+    },
+    {
+      "pergunta": "Qual é a vantagem de usar um serviço gerenciado na AWS em comparação com um serviço não gerenciado?",
+      "opcoes": [
+        "Maior controle sobre a infraestrutura",
+        "Maior flexibilidade na configuração",
+        "Menor custo em comparação com os serviços não gerenciados",
+        "Menor necessidade de gerenciamento e manutenção da infraestrutura"
+      ],
+      "tipo": "unica",
+      "respostaCorreta": "Menor necessidade de gerenciamento e manutenção da infraestrutura"
     }
   ]
 }
+
