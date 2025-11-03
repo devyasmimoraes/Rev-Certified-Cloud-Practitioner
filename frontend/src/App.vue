@@ -48,15 +48,34 @@
               <v-card variant="outlined">
                 <v-progress-linear v-if="historicoCarregando" indeterminate color="primary"></v-progress-linear>
                 <v-alert v-if="erroHistorico" type="error" variant="tonal" dense>{{ erroHistorico }}</v-alert>
+                
                 <v-table v-if="historicoTentativas.length > 0" density="compact">
                   <thead>
-                    <tr><th class="text-left">Data</th><th class="text-left">Tópico</th><th class="text-left">Resultado</th></tr>
+                    <tr>
+                      <th class="text-left">Data</th>
+                      <th class="text-left">Tópico</th>
+                      <th class="text-left">Resultado</th>
+                      <th class="text-left">Ações</th> </tr>
                   </thead>
                   <tbody>
                     <tr v-for="item in historicoTentativas.slice(0, 10)" :key="item.id">
                       <td>{{ item.data }}</td>
                       <td>{{ item.topico }}</td>
                       <td><span :class="getPercentClass(item.percentual)">{{ item.acertos }}/{{ item.total }} ({{ item.percentual }}%)</span></td>
+                      
+                      <td>
+                        <v-btn
+                          v-if="item.percentual < 100"
+                          @click="iniciarRefazer(item.id, item.topico)"
+                          color="blue-darken-2"
+                          variant="text"
+                          size="small"
+                          density="compact"
+                          prepend-icon="mdi-history"
+                        >
+                          Refazer Erradas
+                        </v-btn>
+                      </td>
                     </tr>
                   </tbody>
                 </v-table>
@@ -230,9 +249,14 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 
-// --- (Constantes, Estado UI, Níveis - Sem Mudanças) ---
+// --- (Constantes, Estado UI, Níveis) ---
 const SEGUNDOS_POR_QUESTAO = 90;
-const API_URL = 'http://127.0.0.1:5000/historico';
+// --- 🔥 MUDANÇA: URLs da API centralizadas ---
+const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_HISTORICO_URL = `${API_BASE_URL}/historico`;
+const API_QUESTOES_URL = `${API_BASE_URL}/api/questoes`;
+// --- FIM DA MUDANÇA ---
+
 const telaAtual = ref('selecao');
 const historicoCarregando = ref(true);
 const erroHistorico = ref(null);
@@ -253,7 +277,7 @@ const niveisSimulados = ref([
   { level: 'simulado_5', titulo: 'Simulado 05', icon: 'mdi-numeric-5-box', disabled: true },
 ]);
 
-// --- (Estado do Jogo, Timer, Resultado - Sem Mudanças) ---
+// --- (Estado do Jogo, Timer, Resultado) ---
 const allQuestions = ref({});
 const currentQuestions = ref([]);
 const currentIndex = ref(0);
@@ -264,9 +288,12 @@ const modoTesteTitulo = ref('');
 const questoesErradas = ref([]);
 const questoesParaRevisar = ref([]);
 const historicoTentativas = ref([]);
-const perguntaAtual = ref({ pergunta: '', opcoes: [], respostaCorreta: '' }); 
+const perguntaAtual = ref({ id: '', pergunta: '', opcoes: [], respostaCorreta: '' }); 
 const opcoesEmbaralhadas = ref([]);
 const respostasSelecionadas = ref([]); 
+// --- 🔥 NOVO: Armazena todas as respostas (certas e erradas) ---
+const respostasDaTentativa = ref([]);
+// --- FIM DA MUDANÇA ---
 const timerInterval = ref(null);
 const timeLeft = ref(0);
 const resultadoTitulo = ref('');
@@ -275,54 +302,67 @@ const resultadoFeedback = ref('');
 const resultadoAnalisePilares = ref([]);
 
 
-// --- (onMounted - Sem Mudanças) ---
+// --- 🔥 MUDANÇA: 'onMounted' agora busca questões da API ---
 onMounted(async () => {
   try {
-    const response = await fetch('/questoes.json'); 
-    if (!response.ok) throw new Error('Falha ao carregar questoes.json.');
+    // 1. Buscar da API (http://127.0.0.1:5000/api/questoes)
+    const response = await fetch(API_QUESTOES_URL); 
+    if (!response.ok) throw new Error('Falha ao carregar questoes.json da API.');
     
-    const data = await response.json();
+    // 2. A API retorna uma LISTA PLANA de todas as questões
+    const allQuestionsList = await response.json();
     const processedData = {};
     
+    // 3. Re-agrupar as questões nos tópicos (usando o 'level' que adicionamos no app.py)
     niveisTopicos.value.forEach(topico => {
-      if (data[topico.level]) {
-        processedData[topico.level] = data[topico.level].map(q => ({
+      processedData[topico.level] = allQuestionsList
+        .filter(q => q.level === topico.level)
+        .map(q => ({
           ...q,
           categoria: q.categoria || topico.titulo 
         }));
-      }
     });
 
+    // 4. Re-agrupar as questões nos simulados
     niveisSimulados.value.forEach(simulado => {
-      if (data[simulado.level]) {
-        processedData[simulado.level] = data[simulado.level].map(q => ({
+      processedData[simulado.level] = allQuestionsList
+        .filter(q => q.level === simulado.level)
+        .map(q => ({
           ...q,
           categoria: q.categoria || "Tópico Misto"
         }));
+        
+      if (processedData[simulado.level].length > 0) {
         simulado.disabled = false;
       }
     });
 
     allQuestions.value = processedData; 
+    
   } catch (error) {
     console.error("Erro ao carregar questões:", error);
-    erroHistorico.value = "Falha crítica ao carregar questões. Recarregue a página.";
+    erroHistorico.value = "Falha crítica ao carregar questões da API. O Docker está rodando?";
   }
   await loadHistoryFromBackend();
 });
+// --- FIM DA MUDANÇA ---
 
-// --- (startGame, showQuestion, watch - Sem Mudanças) ---
+
+// --- 🔥 MUDANÇA: 'startGame' agora reseta a lista de respostas ---
 function startGame(level, levelTitle) {
   clearInterval(timerInterval.value);
   currentIndex.value = 0;
   score.value = 0;
   questoesErradas.value = [];
+  respostasDaTentativa.value = []; // <-- NOVO: Reseta a lista de respostas
   currentLevel.value = level;
   nomeNivelAtual.value = levelTitle;
 
   if (level === 'revisao') {
+    // Se for 'revisao', as questões vêm do 'questoesParaRevisar'
+    // que é preenchido pelo 'iniciarRefazer' ou 'startReviewMode'
     currentQuestions.value = [...questoesParaRevisar.value];
-    modoTesteTitulo.value = `Modo de Revisão (${currentQuestions.value.length}q)`;
+    modoTesteTitulo.value = `${levelTitle} (${currentQuestions.value.length}q)`;
   } else if (level === 'completo') {
     currentQuestions.value = [
       ...(allQuestions.value.conceitos || []),
@@ -347,6 +387,8 @@ function startGame(level, levelTitle) {
   resultadoTitulo.value = "Simulado Concluído!";
   showQuestion();
 }
+// --- FIM DA MUDANÇA ---
+
 
 function showQuestion() {
   if (currentIndex.value < currentQuestions.value.length) {
@@ -369,10 +411,10 @@ watch(respostasSelecionadas, (novasRespostas, respostasAntigas) => {
 });
 
 
-// *********** 🔥 FUNÇÃO 'confirmarResposta' MODIFICADA 🔥 ***********
+// --- 🔥 MUDANÇA: 'confirmarResposta' agora salva CADA resposta ---
 function confirmarResposta() {
   respostaDada.value = true;
-  clearInterval(timerInterval.value); // Pausa o timer
+  clearInterval(timerInterval.value); 
 
   const corretas = perguntaAtual.value.respostaCorreta;
   const selecionadas = respostasSelecionadas.value.sort();
@@ -394,20 +436,23 @@ function confirmarResposta() {
     });
   }
 
-  // O setTimeout foi REMOVIDO daqui.
-  // O app agora espera o usuário clicar em "Próxima Questão".
+  // --- 🔥 NOVO: Salva o resultado (certo OU errado) na lista ---
+  respostasDaTentativa.value.push({
+    id: String(perguntaAtual.value.id), // Garante que o ID é string
+    foi_correta: isCorrect
+  });
+  // --- FIM DA MUDANÇA ---
 }
 
-// *********** 🔥 NOVA FUNÇÃO: 'proximaQuestao' 🔥 ***********
 function proximaQuestao() {
   currentIndex.value++;
-  showQuestion(); // Carrega a próxima questão ou chama showResult()
+  showQuestion(); 
   if (telaAtual.value === 'jogo') {
-    startTimer(); // Reinicia o timer para a nova questão
+    startTimer(); 
   }
 }
 
-// --- (showResult, goHome, startReviewMode - Sem Mudanças) ---
+// --- 🔥 MUDANÇA: 'showResult' envia o payload NOVO para a API ---
 async function showResult(motivo) {
   clearInterval(timerInterval.value);
   questoesParaRevisar.value = [...questoesErradas.value];
@@ -426,12 +471,12 @@ async function showResult(motivo) {
   else if (percentual >= 50) resultadoFeedback.value = "Bom esforço! Continue revisando.";
   else resultadoFeedback.value = "Não desanime! Revise os pontos e tente novamente.";
 
+  // ... (Lógica de análise de pilares - sem mudança) ...
   const contagemErros = {};
   questoesParaRevisar.value.forEach(q => {
     const categoria = q.categoria || "Outros"; 
     contagemErros[categoria] = (contagemErros[categoria] || 0) + 1;
   });
-
   if (questoesParaRevisar.value.length > 0) {
     resultadoAnalisePilares.value = Object.entries(contagemErros)
       .map(([nome, contagem]) => ({
@@ -443,38 +488,40 @@ async function showResult(motivo) {
   } else {
     resultadoAnalisePilares.value = [];
   }
+  // --- FIM Lógica de análise ---
 
-  if (currentLevel.value !== 'revisao' && motivo !== 'quit') {
-    const novoResultado = {
-      data: new Date().toLocaleString("pt-BR", { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }),
+  if (currentLevel.value !== 'revisao' && motivo !== 'quit' && total > 0) {
+    
+    // --- 🔥 MUDANÇA: Cria o payload no NOVO formato ---
+    const payloadParaApi = {
       topico: nomeNivelAtual.value.replace("🚀 ", ""), 
-      acertos: score.value,
-      total: total,
-      percentual: percentual
+      respostas: [...respostasDaTentativa.value] // Envia a lista completa de respostas
     };
-    await saveHistoryToBackend(novoResultado);
+    await saveHistoryToBackend(payloadParaApi); // Passa o novo payload
+    // --- FIM DA MUDANÇA ---
   }
   
   telaAtual.value = 'resultado';
 }
+// --- FIM DA MUDANÇA ---
+
 
 function goHome() {
   clearInterval(timerInterval.value);
-  
   if (telaAtual.value === 'jogo') {
     showResult("quit");
   } else {
     telaAtual.value = 'selecao';
   }
-  
-  loadHistoryFromBackend();
+  loadHistoryFromBackend(); // Recarrega o histórico
   questoesErradas.value = [];
   questoesParaRevisar.value = [];
   resultadoAnalisePilares.value = [];
 }
 
 function startReviewMode() {
-  startGame('revisao', `Modo de Revisão`);
+  // Reutiliza as questões erradas da tela de resultado
+  startGame('revisao', `Modo de Revisão`);
 }
 
 // --- (Lógica do Timer - Sem Mudanças) ---
@@ -483,27 +530,31 @@ function startTimer() {
     timeLeft.value--;
     if (timeLeft.value <= 0) {
       clearInterval(timerInterval.value);
-      confirmarResposta(); // Ainda confirma automaticamente se o tempo acabar
+      confirmarResposta(); 
     }
   }, 1000);
 }
-
 const formatTimer = computed(() => {
   const minutos = Math.floor(timeLeft.value / 60);
   const segundos = timeLeft.value % 60;
   return `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
 });
+// --- FIM Lógica do Timer ---
 
-// --- (Lógica de API e Estilos - Sem Mudanças) ---
-async function saveHistoryToBackend(novoResultado) {
+
+// --- 🔥 MUDANÇA: Funções de API ---
+
+// 'saveHistoryToBackend' agora recebe 'payload'
+async function saveHistoryToBackend(payload) {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch(API_HISTORICO_URL, { // Usa a nova constante
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(novoResultado),
+      body: JSON.stringify(payload), // Envia o payload (formato novo)
     });
     if (!response.ok) {
       const errorData = await response.json();
+      // O erro 400 que você via apareceria aqui
       throw new Error(`Falha no POST: ${response.status} - ${JSON.stringify(errorData)}`);
     }
     console.log("Histórico salvo com sucesso!");
@@ -517,7 +568,7 @@ async function loadHistoryFromBackend() {
   historicoCarregando.value = true;
   erroHistorico.value = null;
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(API_HISTORICO_URL); // Usa a nova constante
     if (!response.ok) throw new Error('Falha ao carregar histórico (API offline?).');
     historicoTentativas.value = await response.json();
   } catch (error) {
@@ -528,12 +579,46 @@ async function loadHistoryFromBackend() {
   }
 }
 
+// --- 🔥 FUNÇÃO NOVA: 'iniciarRefazer' ---
+async function iniciarRefazer(idTentativa, nomeTopico) {
+  historicoCarregando.value = true; // Mostra o loading
+  erroHistorico.value = null;
+  try {
+    // 1. Chamar o novo endpoint do backend
+    const response = await fetch(`${API_BASE_URL}/tentativa/${idTentativa}/refazer`);
+    if (!response.ok) throw new Error('Falha ao buscar questões para refazer.');
+
+    const questoesParaRefazerApi = await response.json();
+
+    if (questoesParaRefazerApi.length > 0) {
+      // 2. Coloca as questões recebidas da API no 'questoesParaRevisar'
+      //    Adiciona 'categoria' para a tela de resultados da revisão
+      questoesParaRevisar.value = questoesParaRefazerApi.map(q => ({
+          ...q,
+          categoria: q.categoria || "Revisão de Erradas" 
+      }));
+
+      // 3. Chame 'startGame' com o level 'revisao'
+      startGame('revisao', `Revisão: ${nomeTopico}`);
+      
+    } else {
+      alert('Não há questões erradas para refazer nesta tentativa!');
+    }
+  } catch (error) {
+    console.error('Erro ao iniciar modo "Refazer":', error);
+    erroHistorico.value = "Erro ao carregar questões para refazer.";
+  } finally {
+    historicoCarregando.value = false;
+  }
+}
+// --- FIM DA FUNÇÃO NOVA ---
+
+// --- (Lógica de Estilos - Sem Mudanças) ---
 function getPercentClass(percentual) {
   if (percentual >= 70) return 'text-success font-weight-bold';
   if (percentual >= 50) return 'text-warning font-weight-bold';
   return 'text-error font-weight-bold';
 }
-
 function getOptionColor(opcao) {
   if (!respostaDada.value) return 'primary'; 
   const corretas = perguntaAtual.value.respostaCorreta;
@@ -546,7 +631,6 @@ function getOptionColor(opcao) {
   }
   return 'grey';
 }
-
 function getOptionClass(opcao) {
   if (!respostaDada.value) {
     if (respostasSelecionadas.value.includes(opcao)) {
@@ -564,7 +648,6 @@ function getOptionClass(opcao) {
   }
   return 'opacity-50';
 }
-
 function getClasseRevisao(opcao, respostaCorreta, respostaUsuario) {
   const corretas = Array.isArray(respostaCorreta) ? respostaCorreta : [respostaCorreta];
   const usuario = Array.isArray(respostaUsuario) ? respostaUsuario : []; 
@@ -577,7 +660,6 @@ function getClasseRevisao(opcao, respostaCorreta, respostaUsuario) {
   }
   return ''; 
 }
-
 </script>
 
 <style>
