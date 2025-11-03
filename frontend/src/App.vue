@@ -93,7 +93,6 @@
                     :value="opcao"
                     :color="getOptionColor(opcao)"
                     :disabled="respostaDada"
-                    @click="handleCheckboxClick(opcao)"
                     :class="getOptionClass(opcao)"
                     hide-details
                     class="mb-3 pa-3"
@@ -160,7 +159,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+// *********** 🔥 CORREÇÃO 3: IMPORTAR O WATCH 🔥 ***********
+import { ref, onMounted, computed, watch } from 'vue'
 
 // --- CONSTANTES ---
 const SEGUNDOS_POR_QUESTAO = 90; // Seu tempo de 90s
@@ -223,15 +223,11 @@ onMounted(async () => {
     if (!response.ok) throw new Error('Falha ao carregar questoes.json.');
     allQuestions.value = await response.json();
 
-    // ********* CORREÇÃO 1: Botões Inicializam AQUI *********
-    // Sua lógica para habilitar os botões (agora no lugar certo!)
     niveisSimulados.value.forEach(nivel => {
       if (allQuestions.value[nivel.level] && allQuestions.value[nivel.level].length > 0) {
         nivel.disabled = false;
       }
     });
-    // ******************************************************
-
   } catch (error) {
     console.error("Erro ao carregar questões:", error);
     erroHistorico.value = "Falha crítica ao carregar questões. Recarregue a página.";
@@ -292,22 +288,23 @@ function showQuestion() {
   }
 }
 
-// ********* NOVO: Lógica de Clique Único *********
-function handleCheckboxClick(opcao) {
-    if (respostaDada.value) return; 
 
-    const corretas = perguntaAtual.value.respostaCorreta;
-    const tipo = Array.isArray(corretas) ? 'multipla' : 'unica';
+// *********** 🔥 CORREÇÃO 3: LÓGICA DE SELEÇÃO MOVIDA PARA UM WATCHER 🔥 ***********
+watch(respostasSelecionadas, (novasRespostas, respostasAntigas) => {
+  if (respostaDada.value) return; // Não faz nada se a resposta já foi dada
 
-    // Se for ESCOLHA ÚNICA, desmarca qualquer outra e confirma imediatamente
-    if (tipo === 'unica') {
-        respostasSelecionadas.value = [opcao];
-        confirmarResposta();
-        return;
-    }
-    
-    // Se for MÚLTIPLA, deixa o v-model fazer a seleção (e precisa do botão Confirmar)
-}
+  // Descobre se a pergunta atual é de escolha única ou múltipla
+  const corretas = perguntaAtual.value.respostaCorreta;
+  const tipo = Array.isArray(corretas) ? 'multipla' : 'unica';
+
+  if (tipo === 'unica' && novasRespostas.length > 1) {
+    // Se for 'unica' e o usuário tentar marcar a segunda (ex: ['A', 'B'])
+    // Mantenha apenas a última resposta selecionada.
+    respostasSelecionadas.value = [novasRespostas[novasRespostas.length - 1]];
+  }
+});
+// **********************************************************************************
+
 
 // Lógica de confirmação que lida com STRING (única) e ARRAY (múltipla)
 function confirmarResposta() {
@@ -413,17 +410,29 @@ const formatTimer = computed(() => {
 });
 
 // --- LÓGICA DO "DB" (API) ---
+
+// *********** 🔥 CORREÇÃO 2: VERIFICAÇÃO DE ERRO NO POST 🔥 ***********
 async function saveHistoryToBackend(novoResultado) {
-  try {
-    await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(novoResultado),
-    });
-  } catch (error) {
-    console.error("Erro ao salvar no back-end:", error);
-  }
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(novoResultado),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`Falha no POST: ${response.status} - ${JSON.stringify(errorData)}`);
+    }
+
+    console.log("Histórico salvo com sucesso!");
+    
+  } catch (error) {
+    console.error("Erro ao salvar no back-end:", error);
+    erroHistorico.value = "Ocorreu um erro ao salvar seu resultado.";
+  }
 }
+// ************************************************************************
 
 async function loadHistoryFromBackend() {
   historicoCarregando.value = true;
@@ -464,21 +473,29 @@ function getOptionColor(opcao) {
   return 'grey'; // Cor para opções não selecionadas e erradas
 }
 
+// *********** 🔥 CORREÇÃO 1: ESTILO DE SELEÇÃO 🔥 ***********
 function getOptionClass(opcao) {
-  if (!respostaDada.value) return ''; // Nenhuma classe extra antes da resposta
-  
-  const corretas = perguntaAtual.value.respostaCorreta;
-  
-  if (Array.isArray(corretas)) {
-    // Lógica de Múltipla Escolha
-    if (corretas.includes(opcao)) return 'bg-success-lighten-2 border-success';
-    if (respostasSelecionadas.value.includes(opcao)) return 'bg-error-lighten-2 border-error';
-  } else {
-    // Lógica de Escolha Única
-    if (corretas === opcao) return 'bg-success-lighten-2 border-success';
-    if (respostasSelecionadas.value.includes(opcao)) return 'bg-error-lighten-2 border-error';
-  }
-  return 'opacity-50'; // Opções não selecionadas
+  // 1. Feedback IMEDIATO ao selecionar (antes de confirmar)
+  if (!respostaDada.value) {
+    if (respostasSelecionadas.value.includes(opcao)) {
+      return 'bg-primary-lighten-2 border-primary'; 
+    }
+    return ''; // Padrão (não selecionado)
+  }
+
+  // 2. Feedback PÓS-RESPOSTA (correto/incorreto)
+  const corretas = perguntaAtual.value.respostaCorreta;
+  
+  if (Array.isArray(corretas)) {
+    // Lógica de Múltipla Escolha
+    if (corretas.includes(opcao)) return 'bg-success-lighten-2 border-success';
+    if (respostasSelecionadas.value.includes(opcao)) return 'bg-error-lighten-2 border-error';
+  } else {
+    // Lógica de Escolha Única
+    if (corretas === opcao) return 'bg-success-lighten-2 border-success';
+    if (respostasSelecionadas.value.includes(opcao)) return 'bg-error-lighten-2 border-error';
+  }
+  return 'opacity-50'; // Opções não selecionadas
 }
 </script>
 
@@ -495,6 +512,17 @@ html, body, #app {
 .border-error { border: 1px solid #F44336 !important; }
 .opacity-50 { opacity: 0.6; }
 .text-wrap { white-space: normal !important; }
+
+
+/* *********** 🔥 CORREÇÃO 1: CLASSES DE ESTILO 🔥 *********** */
+.bg-primary-lighten-2 {
+  background-color: #E3F2FD !important; /* Azul bem claro */
+}
+.border-primary {
+  border: 1px solid #2196F3 !important; /* Borda azul */
+}
+/* *************************************************************** */
+
 
 /* Estilo para o checkbox parecer um botão */
 .v-checkbox.v-input--density-default {
